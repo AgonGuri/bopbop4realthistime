@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://cr2qsue3envxc"]
+[gd_scene load_steps=3 format=3 uid="uid://cr2qsue3envxc"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://d0c17chxhmsbo" path="res://Assets/treasureOfAPirate.png" id="1_wo4y2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt3wh"]
+size = Vector2(83, 84)
+
+[node name="Projectile" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wo4y2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lt3wh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3

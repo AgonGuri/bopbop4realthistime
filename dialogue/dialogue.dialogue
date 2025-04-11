@@ -1,0 +1,17 @@
+~ introCutscene
+(Melodic Meadows was a happy place.)
+(We lived together. We laughed together. We loved together.)
+(Our little town worked together in perfect harmony.)
+(But everything changed when the fire nation attacked)
+=> END
+
+
+~ youWin
+Wizard: You...!
+beepbop: yippee!
+=> END
+
+~ youLose
+Wizard: Ha! You fool.
+beepbop: oh nooooooo
+=> END

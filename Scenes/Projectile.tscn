@@ -6,13 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt3wh"]
 size = Vector2(83, 84)
 
-[node name="Projectile" type="Area2D"]
+[node name="Projectile" type="Area2D" groups=["projectile"]]
 script = ExtResource("1_syhq2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_aai4y")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["projectile"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lt3wh")
 
 [node name="Timer" type="Timer" parent="."]

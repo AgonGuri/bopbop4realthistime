@@ -19,19 +19,19 @@ script = ExtResource("1_y41j2")
 [node name="OkArea" type="Area2D" parent="."]
 scale = Vector2(1, 1.24194)
 
-[node name="OkAreaCollider" type="CollisionShape2D" parent="OkArea" groups=["projectile"]]
+[node name="OkAreaCollider" type="CollisionShape2D" parent="OkArea"]
 shape = SubResource("RectangleShape2D_h81vs")
 
 [node name="PerfectArea" type="Area2D" parent="."]
 scale = Vector2(1, 1.24194)
 
-[node name="PerfectAreaCollider" type="CollisionShape2D" parent="PerfectArea" groups=["projectile"]]
+[node name="PerfectAreaCollider" type="CollisionShape2D" parent="PerfectArea"]
 shape = SubResource("RectangleShape2D_yx6vh")
 
 [node name="GreatArea" type="Area2D" parent="."]
 scale = Vector2(1, 1.24194)
 
-[node name="GreatAreaCollider" type="CollisionShape2D" parent="GreatArea" groups=["projectile"]]
+[node name="GreatAreaCollider" type="CollisionShape2D" parent="GreatArea"]
 shape = SubResource("RectangleShape2D_rx8q8")
 
 [node name="PushTimer" type="Timer" parent="."]

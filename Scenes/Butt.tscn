@@ -5,22 +5,29 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h81vs"]
 size = Vector2(110, 110)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx6vh"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rx8q8"]
 size = Vector2(72, 78)
 
-[node name="Butt" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx6vh"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1, 0.818182)
+[node name="Butt" type="Sprite2D"]
+scale = Vector2(1, 0.792208)
 texture = ExtResource("1_bvwck")
 
-[node name="OkAreaCollider" type="CollisionShape2D" parent="."]
+[node name="OKArea" type="Area2D" parent="."]
+scale = Vector2(1, 1.2623)
+
+[node name="OkAreaCollider" type="CollisionShape2D" parent="OKArea"]
 shape = SubResource("RectangleShape2D_h81vs")
 
-[node name="PerfectAreaCollider" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_yx6vh")
+[node name="GreatArea" type="Area2D" parent="."]
+scale = Vector2(1, 1.2623)
 
-[node name="GreatAreaCollider" type="CollisionShape2D" parent="."]
+[node name="GreatAreaCollider" type="CollisionShape2D" parent="GreatArea"]
 shape = SubResource("RectangleShape2D_rx8q8")
+
+[node name="PerfectArea" type="Area2D" parent="."]
+scale = Vector2(1, 1.2623)
+
+[node name="PerfectAreaCollider" type="CollisionShape2D" parent="PerfectArea"]
+shape = SubResource("RectangleShape2D_yx6vh")

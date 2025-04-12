@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 var perfect = false
 var great = false

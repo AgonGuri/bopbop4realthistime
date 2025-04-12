@@ -6,6 +6,11 @@
 do StartGame()
 => END
 
+~ beforeGameStart
+Wizard: You will never defeat me bwa ha ha
+Bopbop: !!
+=> END
+
 
 ~ youWin
 Wizard: You...!

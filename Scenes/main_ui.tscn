@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcjmeip8hvwrw"]
+[gd_scene load_steps=10 format=3 uid="uid://dcjmeip8hvwrw"]
 
 [ext_resource type="Texture2D" uid="uid://cqghmmbuju6ve" path="res://assets/backgrounds/bg.jpg" id="1_kv10l"]
 [ext_resource type="Texture2D" uid="uid://csnp2acg85skg" path="res://assets/characters/enemy_attack.png" id="2_1x370"]
+[ext_resource type="Texture2D" uid="uid://chcx10qhp1tn3" path="res://assets/backgrounds/villagers background.png" id="2_d2c5m"]
 [ext_resource type="Texture2D" uid="uid://stuhq155c0qa" path="res://assets/characters/wizard_default.png" id="3_ivwa4"]
 [ext_resource type="Texture2D" uid="uid://b8lnu5jfnlqw4" path="res://assets/characters/bopbop_defend.png" id="4_tq4ki"]
 [ext_resource type="Texture2D" uid="uid://csi7jcnqjh26k" path="res://assets/characters/bopbop_default.png" id="5_37g7i"]
@@ -51,6 +52,10 @@ animations = [{
 offset_right = 1941.0
 offset_bottom = 1145.0
 texture = ExtResource("1_kv10l")
+
+[node name="VillagersBackground" type="Sprite2D" parent="TextureRect"]
+position = Vector2(1025, 580)
+texture = ExtResource("2_d2c5m")
 
 [node name="EvilWizard" type="AnimatedSprite2D" parent="."]
 position = Vector2(1606, 1008)

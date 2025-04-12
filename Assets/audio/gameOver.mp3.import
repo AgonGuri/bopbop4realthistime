@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://c35847mf0bw82"
-path="res://.godot/imported/gameOver.mp3-6e7b52deb71b37ca22188f12a61083be.mp3str"
+path="res://.godot/imported/gameOver.mp3-a603b847fb3b796271149ae91b6f50c7.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/gameOver.mp3"
-dest_files=["res://.godot/imported/gameOver.mp3-6e7b52deb71b37ca22188f12a61083be.mp3str"]
+source_file="res://Assets/audio/gameOver.mp3"
+dest_files=["res://.godot/imported/gameOver.mp3-a603b847fb3b796271149ae91b6f50c7.mp3str"]
 
 [params]
 

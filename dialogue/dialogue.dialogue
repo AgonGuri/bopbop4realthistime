@@ -1,17 +1,75 @@
 ~ introCutscene
-(Melodic Meadows was a happy place.)
+(Melodic Meadow was a happy place.)
 (We lived together. We laughed together. We loved together.)
+do ShowSecondImage()
 (Our little town worked together in perfect harmony.)
-(But everything changed when the fire nation attacked)
+(But then... three months ago...)
+do ShowThirdImage()
+Wizard: Finally...!
+Wizard: With this dark spell, I will finally be able to make it happen.
+do ShowFourthImage()
+Wizard: I will steal the rhythm from the world!
+Wizard: They will be left with nothing! Society will crumble!
+Wizard: No more music. No more dancing. No more coordination!
+Wizard: Without this basic sense of rhythm, conversations themselves will fall apart into incoherent messes!
+Wizard: No one will be able to get anything done!
+Wizard: And then...
+do ShowFifthImage()
+Wizard: I will have rhythm. I will have all the rhythm.
+Wizard: I will step in as the ultimate ruler of this land.
+Wizard: And then nobody will ever laugh at me for being off-beat.
+Wizard: Never again.
+do ShowSixthImage()
+(Melodic Meadow fell into ruin.)
+(Without our sense of rhythm...)
+(We lost everything.)
+(And the dark wizard took control.)
+do ShowDarkScreen()
+(...)
+do ShowSeventhImage()
+Bopbop: (I've never had a good sense of rhythm.)
+Bopbop: (They told me that I wouldn't be any good at playing music.)
+Bopbop: (They made fun of me, for being too clumsy with the instruments.)
+Bopbop: (But now...)
+do ShowEighthImage()
+Bopbop: (I'll show them...!)
+Bopbop: (I've been studying! If I can parry the wizard's attacks back at them...)
+Bopbop: (If I can just repeat their rhythms after the right [color=yellow]delay[/color]...)
+Bopbop: (It won't be enough to stop them for good.)
+Bopbop: (But, just maybe, I can buy us some time.)
+do ShowNinthImage()
+Bopbop: (I'll save everyone!)
+Bopbop: (That wizard won't know what hit them!!)
+do StartGame()
+=> END
+
+~ beforeGameStart
+Wizard: You fool! You dare challenge me?
+Bopbop: !!!
+Wizard: Fine... let's see how you like this!
 => END
 
 
 ~ youWin
 Wizard: You...!
-beepbop: yippee!
+Wizard: Wretched fool...
+Wizard: This won't be enough to stop me......
+Bopbop: (No, it won't.)
+Bopbop: (But their dark magicks have been reflected back at them. Their rhythm is out of sync with time itself.)
+Bopbop: (They'll slow to a stop...)
+Bopbop: (For years.)
+Bopbop: (And years.)
+Bopbop: (Giving us enough time...)
+Bopbop: (Enough [color=yellow]delay[/color]...)
+Bopbop: (To stop them for good.)
+Wizard: Ngghrghh...!!
+Bopbop: (...)
+Bopbop: (They're frozen.)
+Bopbop: (For now.)
 => END
 
 ~ youLose
 Wizard: Ha! You fool.
-beepbop: oh nooooooo
+Wizard: You'll never measure up against me!
+Bopbop: (No...! I can't let this be my coda...)
 => END

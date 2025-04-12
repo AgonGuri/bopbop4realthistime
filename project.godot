@@ -11,12 +11,18 @@ config_version=5
 [application]
 
 config/name="BopBop4RealThisTime"
+run/main_scene="res://Scenes/Menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+CutSceneManager="*res://Scenes/CutSceneManager.tscn"
+
+[dialogue_manager]
+
+general/balloon_path="res://dialogue/balloon.tscn"
 
 [display]
 

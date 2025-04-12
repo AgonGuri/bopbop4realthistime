@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csi7jcnqjh26k"
-path="res://.godot/imported/bopbop_default.png-d3a751ed3070b6a3a5079eba9838a90f.ctex"
+uid="uid://btn4mo2mdcfji"
+path="res://.godot/imported/lindwormstatue.jpg-ddd997662962cbfc9b4555ad5a3cd881.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/bopbop_default.png"
-dest_files=["res://.godot/imported/bopbop_default.png-d3a751ed3070b6a3a5079eba9838a90f.ctex"]
+source_file="res://Assets/lindwormstatue.jpg"
+dest_files=["res://.godot/imported/lindwormstatue.jpg-ddd997662962cbfc9b4555ad5a3cd881.ctex"]
 
 [params]
 

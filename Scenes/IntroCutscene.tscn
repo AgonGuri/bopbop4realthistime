@@ -1,0 +1,64 @@
+[gd_scene load_steps=11 format=3 uid="uid://gw60k1s7aoue"]
+
+[ext_resource type="Texture2D" uid="uid://0x8ejt6bg5ly" path="res://Assets/cutscenes/cutscene_1.png" id="1_eaouc"]
+[ext_resource type="Texture2D" uid="uid://c4ny7opxby4ab" path="res://Assets/cutscenes/cutscene_2.png" id="2_ol87k"]
+[ext_resource type="Texture2D" uid="uid://cw2whg857a4hl" path="res://Assets/cutscenes/cutscene_3.png" id="3_7xajb"]
+[ext_resource type="Texture2D" uid="uid://bq3famv3iwssu" path="res://Assets/cutscenes/cutscene_4.png" id="4_1aklt"]
+[ext_resource type="Texture2D" uid="uid://bt2qfqr7eljur" path="res://Assets/cutscenes/cutscene_5.png" id="5_p5ptc"]
+[ext_resource type="Texture2D" uid="uid://doj1awjrj0i18" path="res://Assets/cutscenes/cutscene_6.png" id="6_eui0u"]
+[ext_resource type="Texture2D" uid="uid://dbiitf64pbc1c" path="res://Assets/cutscenes/black.jpg" id="7_luax4"]
+[ext_resource type="Texture2D" uid="uid://bwmxk5fq0afsq" path="res://Assets/cutscenes/cutscene_7.png" id="7_q7j52"]
+[ext_resource type="Texture2D" uid="uid://cfexishta0dqa" path="res://Assets/cutscenes/cutscene_8.png" id="8_qi2qr"]
+[ext_resource type="Texture2D" uid="uid://bocf36g6iif81" path="res://Assets/cutscenes/cutscene_9.png" id="9_4q8cg"]
+
+[node name="IntroCutscene" type="Node2D"]
+
+[node name="firstImage" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_eaouc")
+
+[node name="secondImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("2_ol87k")
+
+[node name="thirdImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("3_7xajb")
+
+[node name="fourthImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("4_1aklt")
+
+[node name="fifthImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("5_p5ptc")
+
+[node name="sixthImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("6_eui0u")
+
+[node name="darkScreen" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(975.5, 555.5)
+scale = Vector2(1.55947, 1.13434)
+texture = ExtResource("7_luax4")
+
+[node name="seventhImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("7_q7j52")
+
+[node name="eighthImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("8_qi2qr")
+
+[node name="ninthImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("9_4q8cg")

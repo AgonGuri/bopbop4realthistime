@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1qjhrxohaaf3"]
+
+[ext_resource type="Script" path="res://Scripts/ArrowOverlay.gd" id="1_y41j2"]
+[ext_resource type="Texture2D" uid="uid://d0c17chxhmsbo" path="res://Assets/treasureOfAPirate.png" id="2_dryew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h81vs"]
+size = Vector2(110, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx6vh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx8q8"]
+size = Vector2(72, 78)
+
+[node name="Butt" type="Sprite2D"]
+scale = Vector2(1, 0.805195)
+texture = ExtResource("2_dryew")
+script = ExtResource("1_y41j2")
+
+[node name="OkArea" type="Area2D" parent="."]
+scale = Vector2(1, 1.24194)
+
+[node name="OkAreaCollider" type="CollisionShape2D" parent="OkArea"]
+shape = SubResource("RectangleShape2D_h81vs")
+
+[node name="PerfectArea" type="Area2D" parent="."]
+scale = Vector2(1, 1.24194)
+
+[node name="PerfectAreaCollider" type="CollisionShape2D" parent="PerfectArea"]
+shape = SubResource("RectangleShape2D_yx6vh")
+
+[node name="GreatArea" type="Area2D" parent="."]
+scale = Vector2(1, 1.24194)
+
+[node name="GreatAreaCollider" type="CollisionShape2D" parent="GreatArea"]
+shape = SubResource("RectangleShape2D_rx8q8")

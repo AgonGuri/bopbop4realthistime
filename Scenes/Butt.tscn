@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://io71ioevinxq"]
+
+[ext_resource type="Texture2D" uid="uid://d0c17chxhmsbo" path="res://assets/treasureOfAPirate.png" id="1_bvwck"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h81vs"]
+size = Vector2(110, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx6vh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rx8q8"]
+size = Vector2(72, 78)
+
+[node name="Butt" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.818182)
+texture = ExtResource("1_bvwck")
+
+[node name="OkAreaCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_h81vs")
+
+[node name="PerfectAreaCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yx6vh")
+
+[node name="GreatAreaCollider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rx8q8")

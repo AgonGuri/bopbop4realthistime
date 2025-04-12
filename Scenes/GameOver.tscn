@@ -1,27 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://biaethuog3gva"]
+[gd_scene load_steps=4 format=3 uid="uid://biaethuog3gva"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_7pnli"]
+[ext_resource type="Texture2D" uid="uid://dxg1ndrlpsgnb" path="res://Assets/cutscenes/cutscene_gameover.png" id="2_vchq0"]
+[ext_resource type="AudioStream" uid="uid://c35847mf0bw82" path="res://Assets/audio/gameOver.mp3" id="3_e1wm8"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_7pnli")
 
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_vchq0")
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 270.0
-offset_top = 29.0
-offset_right = 838.0
-offset_bottom = 227.0
-text = "game over"
+offset_left = 88.0
+offset_top = 78.0
+offset_right = 967.0
+offset_bottom = 287.0
+theme_override_font_sizes/normal_font_size = 150
+text = "GAME OVER"
 
 [node name="StartButton" type="Button" parent="."]
-offset_left = 314.0
-offset_top = 284.0
-offset_right = 805.0
-offset_bottom = 409.0
+offset_left = 47.0
+offset_top = 376.0
+offset_right = 363.0
+offset_bottom = 501.0
+theme_override_font_sizes/font_size = 50
 text = "Restart"
 
 [node name="QuitButton" type="Button" parent="."]
-offset_left = 316.0
-offset_top = 455.0
-offset_right = 807.0
-offset_bottom = 580.0
+offset_left = 1552.0
+offset_top = 377.0
+offset_right = 1867.0
+offset_bottom = 502.0
+theme_override_font_sizes/font_size = 50
 text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_e1wm8")
+autoplay = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

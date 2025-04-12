@@ -87,6 +87,8 @@ var dialogue_line: DialogueLine:
 ## The menu of responses
 @onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
+@onready var talkSound: AudioStreamPlayer2D = $TalkSound
+@onready var talkSoundWizard: AudioStreamPlayer2D = $TalkSoundWizard
 
 func _ready() -> void:
 	balloon.hide()
@@ -167,3 +169,16 @@ func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 
 
 #endregion
+
+
+func _on_dialogue_label_spoke(letter: String, letter_index: int, speed: float) -> void:
+	if character_label.text == "Wizard":
+		if not letter in [".", " "]:
+			talkSoundWizard.pitch_scale = randf_range(0.95, 1.05)
+			talkSoundWizard.play()
+	
+	else:
+		if not letter in [".", " "]:
+			talkSound.pitch_scale = randf_range(0.95, 1.05)
+			talkSound.play()
+	

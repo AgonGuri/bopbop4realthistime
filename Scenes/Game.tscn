@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4icgmo4tjv4f"]
+[gd_scene load_steps=13 format=3 uid="uid://c4icgmo4tjv4f"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_v8xjo"]
 [ext_resource type="PackedScene" uid="uid://d1qjhrxohaaf3" path="res://Scenes/ArrowOverlay.tscn" id="2_h6igi"]
 [ext_resource type="PackedScene" uid="uid://cse5xue0etpn7" path="res://Scenes/Conductor.tscn" id="3_0ohds"]
-[ext_resource type="AudioStream" uid="uid://b6oqgqcau00cs" path="res://Assets/Music/BL1NKY - Army of Three (Master).wav" id="4_bviq5"]
 [ext_resource type="PackedScene" uid="uid://dcjmeip8hvwrw" path="res://Scenes/main_ui.tscn" id="4_yhgk7"]
 [ext_resource type="Texture2D" uid="uid://chcx10qhp1tn3" path="res://Assets/backgrounds/villagers background.png" id="6_0iq4p"]
 [ext_resource type="Texture2D" uid="uid://gf2hrt3po362" path="res://Assets/backgrounds/villagers foreground.png" id="6_rp4hx"]
@@ -71,7 +70,6 @@ animation = &"ArrowDOWN"
 input = "down"
 
 [node name="Conductor" parent="." instance=ExtResource("3_0ohds")]
-stream = ExtResource("4_bviq5")
 
 [node name="Score" type="Label" parent="."]
 offset_right = 40.0

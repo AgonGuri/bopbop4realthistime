@@ -30,7 +30,7 @@ var spawn_2_beat = 0
 var spawn_3_beat = 1
 var spawn_4_beat = 0
 
-var lane = 0
+var lane = randi() % 4
 var rand = 0
 var projectile = load("res://Scenes/Projectile.tscn")
 var instance
@@ -66,12 +66,16 @@ func _input(event):
 func _on_conductor_measure_signal(pos):
 	if pos == 1:
 		_spawn_notes(spawn_1_beat)
+		lane = randi() % 4
 	elif pos == 2:
 		_spawn_notes(spawn_2_beat)
+		lane = randi() % 4
 	elif pos == 3:
 		_spawn_notes(spawn_3_beat)
+		lane = randi() % 4
 	elif pos == 4:
 		_spawn_notes(spawn_4_beat)
+		lane = randi() % 4
 
 func _on_conductor_beat_signal(pos):
 	song_position_in_beats = pos
@@ -163,7 +167,7 @@ func _on_conductor_beat_signal(pos):
 
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:
-		lane = randi() % 3
+		lane = randi() % 4
 		instance = projectile.instantiate()
 		instance.initialize(lane)
 		add_child(instance)
@@ -172,7 +176,7 @@ func _spawn_notes(to_spawn):
 			rand = randi() % 4
 		lane = rand
 		instance = projectile.instantiate()
-		projectile.initialize(lane)
+		instance.initialize(lane)
 		add_child(instance)
 		
 

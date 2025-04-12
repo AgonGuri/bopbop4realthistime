@@ -51,7 +51,7 @@ func initialize(lane):
 
 
 func destroy(score):
-	#$CPUParticles2D.emitting = true
+	$GPUParticles2D.emitting = true
 	$Sprite2D.visible = false
 	$Timer.start()
 	hit = true

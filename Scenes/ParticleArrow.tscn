@@ -4,7 +4,7 @@
 lifetime_randomness = 1.0
 particle_flag_disable_z = true
 spread = 180.0
-initial_velocity_max = 100.0
+initial_velocity_max = 250.0
 angular_velocity_min = -720.0
 angular_velocity_max = 720.0
 orbit_velocity_min = 0.547
@@ -16,18 +16,16 @@ linear_accel_min = -100.0
 linear_accel_max = -33.34
 tangential_accel_min = -38.17
 tangential_accel_max = 43.55
-scale_min = 3.0
-scale_max = 10.0
-color = Color(1, 0.658824, 0, 1)
-hue_variation_min = -0.23
-hue_variation_max = -2.23517e-08
+scale_min = 6.0
+scale_max = 12.0
+color = Color(1, 0.4, 0.25098, 1)
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.2
 
 [node name="ParticleArrow" type="Node2D"]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-emitting = false
-amount = 28
+amount = 40
 process_material = SubResource("ParticleProcessMaterial_0i10x")
 lifetime = 0.5
-one_shot = true
 explosiveness = 1.0

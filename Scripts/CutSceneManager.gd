@@ -34,6 +34,38 @@ func _process(delta: float) -> void:
 func ShowSecondImage():
 	var secondImage = get_node("/root/IntroCutscene/secondImage")
 	secondImage.visible = true
+	
+func ShowThirdImage():
+	var thirdImage = get_node("/root/IntroCutscene/thirdImage")
+	thirdImage.visible = true
+	
+func ShowFourthImage():
+	var fourthImage = get_node("/root/IntroCutscene/fourthImage")
+	fourthImage.visible = true
+	
+func ShowFifthImage():
+	var fifthImage = get_node("/root/IntroCutscene/fifthImage")
+	fifthImage.visible = true
+	
+func ShowSixthImage():
+	var sixthImage = get_node("/root/IntroCutscene/sixthImage")
+	sixthImage.visible = true
+	
+func ShowSeventhImage():
+	var seventhImage = get_node("/root/IntroCutscene/seventhImage")
+	seventhImage.visible = true
+	
+func ShowEighthImage():
+	var eighthImage = get_node("/root/IntroCutscene/eighthImage")
+	eighthImage.visible = true
+	
+func ShowNinthImage():
+	var ninthImage = get_node("/root/IntroCutscene/ninthImage")
+	ninthImage.visible = true
+
+func ShowDarkScreen():
+	var darkScreen = get_node("/root/IntroCutscene/darkScreen")
+	darkScreen.visible = true
 
 func StartGame():
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")

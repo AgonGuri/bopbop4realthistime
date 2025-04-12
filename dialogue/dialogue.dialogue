@@ -1,5 +1,5 @@
 ~ introCutscene
-(Melodic Meadow was a happy place.)
+(Melodic Meadows was a happy place.)
 (We lived together. We laughed together. We loved together.)
 do ShowSecondImage()
 (Our little town worked together in perfect harmony.)
@@ -20,7 +20,7 @@ Wizard: I will step in as the ultimate ruler of this land.
 Wizard: And then nobody will ever laugh at me for being off-beat.
 Wizard: Never again.
 do ShowSixthImage()
-(Melodic Meadow fell into ruin.)
+(Melodic Meadows fell into ruin.)
 (Without our sense of rhythm...)
 (We lost everything.)
 (And the dark wizard took control.)
@@ -47,6 +47,7 @@ do StartGame()
 Wizard: You fool! You dare challenge me?
 Bopbop: !!!
 Wizard: Fine... let's see how you like this!
+do StartGameplay()
 => END
 
 
@@ -68,7 +69,7 @@ Bopbop: (...)
 Bopbop: (They're frozen.)
 do ShowWinSecondImage()
 Bopbop: (I won!)
-Bopbop: (Rhythm is back! Melodic Meadow is saved!)
+Bopbop: (Rhythm is back! Melodic Meadows is saved!)
 Bopbop: (For now...)
 => END
 

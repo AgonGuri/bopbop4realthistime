@@ -14,6 +14,50 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("4_l2nkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xfjbi")
+}],
+"loop": true,
+"name": &"ArrowDOWN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5qq0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fsv36")
+}],
+"loop": true,
+"name": &"ArrowLEFT",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h0d7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_41vbi")
+}],
+"loop": true,
+"name": &"ArrowRIGHT",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d6s06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_535or")
+}],
+"loop": true,
+"name": &"ArrowUP",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("1_d6s06")
 }, {
 "duration": 1.0,
@@ -43,17 +87,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h81vs"]
-size = Vector2(110, 110)
+size = Vector2(148, 161.999)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rx8q8"]
-size = Vector2(72, 78)
+size = Vector2(90, 95.9996)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yx6vh"]
 
 [node name="ArrowOverlay" type="AnimatedSprite2D"]
 scale = Vector2(1, 0.805195)
 sprite_frames = SubResource("SpriteFrames_c7mch")
-animation = &"Arrows"
+animation = &"ArrowUP"
 script = ExtResource("1_y41j2")
 
 [node name="OkArea" type="Area2D" parent="."]
@@ -76,6 +120,7 @@ shape = SubResource("RectangleShape2D_yx6vh")
 
 [node name="PushTimer" type="Timer" parent="."]
 wait_time = 0.05
+one_shot = true
 
 [connection signal="area_entered" from="OkArea" to="." method="_on_ok_area_area_entered"]
 [connection signal="area_exited" from="OkArea" to="." method="_on_ok_area_area_exited"]
@@ -83,3 +128,4 @@ wait_time = 0.05
 [connection signal="area_exited" from="GreatArea" to="." method="_on_great_area_area_exited"]
 [connection signal="area_entered" from="PerfectArea" to="." method="_on_perfect_area_area_entered"]
 [connection signal="area_exited" from="PerfectArea" to="." method="_on_perfect_area_area_exited"]
+[connection signal="timeout" from="PushTimer" to="." method="_on_PushTimer_timeout"]

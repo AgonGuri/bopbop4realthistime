@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cqc6i6e1wrgiq"
-path="res://.godot/imported/BL1NKY - Army of Three (Master).mp3-34b0fa26d320b8f31468806376ca1742.mp3str"
+path="res://.godot/imported/BL1NKY - Army of Three (Master).mp3-c770c1dc784c327096b82ad0fc173b64.mp3str"
 
 [deps]
 
-source_file="res://Assets/Music/BL1NKY - Army of Three (Master).mp3"
-dest_files=["res://.godot/imported/BL1NKY - Army of Three (Master).mp3-34b0fa26d320b8f31468806376ca1742.mp3str"]
+source_file="res://assets/Music/BL1NKY - Army of Three (Master).mp3"
+dest_files=["res://.godot/imported/BL1NKY - Army of Three (Master).mp3-c770c1dc784c327096b82ad0fc173b64.mp3str"]
 
 [params]
 

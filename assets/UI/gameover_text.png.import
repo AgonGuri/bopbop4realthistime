@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbtslxh17k8vc"
-path="res://.godot/imported/gameover_text.png-a10952917374e925d73ca5a5179b8245.ctex"
+path="res://.godot/imported/gameover_text.png-96e67bfff607bcd488931105347aa5b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/gameover_text.png"
-dest_files=["res://.godot/imported/gameover_text.png-a10952917374e925d73ca5a5179b8245.ctex"]
+source_file="res://assets/UI/gameover_text.png"
+dest_files=["res://.godot/imported/gameover_text.png-96e67bfff607bcd488931105347aa5b6.ctex"]
 
 [params]
 

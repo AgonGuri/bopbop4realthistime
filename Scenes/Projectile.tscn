@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr2qsue3envxc"]
+[gd_scene load_steps=6 format=3 uid="uid://cr2qsue3envxc"]
 
 [ext_resource type="Texture2D" uid="uid://da818h1pnx6yl" path="res://Assets/fireball.png" id="1_aai4y"]
 [ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_syhq2"]
+[ext_resource type="AudioStream" uid="uid://hiimc850gtsc" path="res://Assets/audio/dong.mp3" id="3_sqfjn"]
+[ext_resource type="AudioStream" uid="uid://c7u8qgdspkrex" path="res://Assets/audio/ding.mp3" id="4_1dcvv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt3wh"]
 size = Vector2(83, 84)
@@ -24,5 +26,11 @@ one_shot = true
 [node name="Label" type="Label" parent="Node2D"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="HitSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_sqfjn")
+
+[node name="SpawnSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_1dcvv")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

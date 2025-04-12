@@ -11,7 +11,7 @@ size = Vector2(110, 110)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rx8q8"]
 size = Vector2(72, 78)
 
-[node name="Butt" type="Sprite2D"]
+[node name="ArrowOverlay" type="Sprite2D"]
 scale = Vector2(1, 0.805195)
 texture = ExtResource("2_dryew")
 script = ExtResource("1_y41j2")
@@ -19,17 +19,27 @@ script = ExtResource("1_y41j2")
 [node name="OkArea" type="Area2D" parent="."]
 scale = Vector2(1, 1.24194)
 
-[node name="OkAreaCollider" type="CollisionShape2D" parent="OkArea"]
+[node name="OkAreaCollider" type="CollisionShape2D" parent="OkArea" groups=["projectile"]]
 shape = SubResource("RectangleShape2D_h81vs")
 
 [node name="PerfectArea" type="Area2D" parent="."]
 scale = Vector2(1, 1.24194)
 
-[node name="PerfectAreaCollider" type="CollisionShape2D" parent="PerfectArea"]
+[node name="PerfectAreaCollider" type="CollisionShape2D" parent="PerfectArea" groups=["projectile"]]
 shape = SubResource("RectangleShape2D_yx6vh")
 
 [node name="GreatArea" type="Area2D" parent="."]
 scale = Vector2(1, 1.24194)
 
-[node name="GreatAreaCollider" type="CollisionShape2D" parent="GreatArea"]
+[node name="GreatAreaCollider" type="CollisionShape2D" parent="GreatArea" groups=["projectile"]]
 shape = SubResource("RectangleShape2D_rx8q8")
+
+[node name="PushTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[connection signal="area_entered" from="OkArea" to="." method="_on_ok_area_area_entered"]
+[connection signal="area_exited" from="OkArea" to="." method="_on_ok_area_area_exited"]
+[connection signal="area_entered" from="PerfectArea" to="." method="_on_perfect_area_area_entered"]
+[connection signal="area_exited" from="PerfectArea" to="." method="_on_perfect_area_area_exited"]
+[connection signal="area_entered" from="GreatArea" to="." method="_on_great_area_area_entered"]
+[connection signal="area_exited" from="GreatArea" to="." method="_on_great_area_area_exited"]

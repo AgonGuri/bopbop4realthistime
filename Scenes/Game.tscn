@@ -1,22 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4icgmo4tjv4f"]
+[gd_scene load_steps=5 format=3 uid="uid://c4icgmo4tjv4f"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_v8xjo"]
 [ext_resource type="PackedScene" uid="uid://5a7tpdxy0wou" path="res://Scenes/Butt.tscn" id="2_akbmm"]
+[ext_resource type="PackedScene" uid="uid://cse5xue0etpn7" path="res://Scenes/Conductor.tscn" id="3_0ohds"]
+[ext_resource type="Script" path="res://Scripts/ArrowOverlay.gd" id="3_5fl0q"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node2D"]
 script = ExtResource("1_v8xjo")
 
-[node name="Butt" parent="." instance=ExtResource("2_akbmm")]
+[node name="ArrowOverlays" type="Node" parent="."]
+
+[node name="Butt" parent="ArrowOverlays" instance=ExtResource("2_akbmm")]
 position = Vector2(173, 95)
 rotation = -1.5708
+script = ExtResource("3_5fl0q")
+input = "up"
 
-[node name="Butt2" parent="." instance=ExtResource("2_akbmm")]
+[node name="Butt2" parent="ArrowOverlays" instance=ExtResource("2_akbmm")]
 position = Vector2(174, 258)
+script = ExtResource("3_5fl0q")
+input = "right"
 
-[node name="Butt3" parent="." instance=ExtResource("2_akbmm")]
+[node name="Butt3" parent="ArrowOverlays" instance=ExtResource("2_akbmm")]
 position = Vector2(175, 408)
 rotation = 3.14159
+script = ExtResource("3_5fl0q")
+input = "left"
 
-[node name="Butt4" parent="." instance=ExtResource("2_akbmm")]
+[node name="Butt4" parent="ArrowOverlays" instance=ExtResource("2_akbmm")]
 position = Vector2(173, 557)
 rotation = 1.5708
+script = ExtResource("3_5fl0q")
+input = "down"
+
+[node name="Conductor" parent="." instance=ExtResource("3_0ohds")]
+
+[node name="Score" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Combo" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="beatSignal" from="Conductor" to="." method="_on_conductor_beat_signal"]
+[connection signal="measureSignal" from="Conductor" to="." method="_on_conductor_measure_signal"]

@@ -17,6 +17,7 @@ var hit = false
 
 
 func _ready():
+	$SpawnSFX.play()
 	pass
 
 #projectile functions
@@ -50,19 +51,22 @@ func initialize(lane):
 
 
 func destroy(score):
-	#$CPUParticles2D.emitting = true
+	$GPUParticles2D.emitting = true
 	$Sprite2D.visible = false
 	$Timer.start()
 	hit = true
 	if score == 3:
 		$Node2D/Label.text = "PERFECT"
 		$Node2D/Label.modulate = Color("f6d6bd")
+		$HitSFX.play()
 	elif score == 2:
 		$Node2D/Label.text = "GREAT"
 		$Node2D/Label.modulate = Color("c3a38a")
+		$HitSFX.play()
 	elif score == 1:
 		$Node2D/Label.text = "OK"
 		$Node2D/Label.modulate = Color("997577")
+		$HitSFX.play()
 	elif score == 0:
 		$Node2D/Label.text = "BOOOH"
 		$Node2D/Label.modulate = Color("FF0000")

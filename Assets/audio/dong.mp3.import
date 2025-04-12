@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://hiimc850gtsc"
-path="res://.godot/imported/dong.mp3-71139122db9f704694b74a4d803ae360.mp3str"
+path="res://.godot/imported/dong.mp3-1ad13d45af02f3485b2b461dfe24ab03.mp3str"
 
 [deps]
 
-source_file="res://Assets/audio/dong.mp3"
-dest_files=["res://.godot/imported/dong.mp3-71139122db9f704694b74a4d803ae360.mp3str"]
+source_file="res://assets/audio/dong.mp3"
+dest_files=["res://.godot/imported/dong.mp3-1ad13d45af02f3485b2b461dfe24ab03.mp3str"]
 
 [params]
 

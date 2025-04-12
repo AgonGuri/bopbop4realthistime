@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://5a7tpdxy0wou"]
+[gd_scene load_steps=5 format=3 uid="uid://b54fttbwf2otb"]
 
-[ext_resource type="Texture2D" uid="uid://d0c17chxhmsbo" path="res://Assets/treasureOfAPirate.png" id="1_bvwck"]
+[ext_resource type="Texture2D" uid="uid://d0c17chxhmsbo" path="res://assets/treasureOfAPirate.png" id="1_bvwck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h81vs"]
 size = Vector2(110, 110)

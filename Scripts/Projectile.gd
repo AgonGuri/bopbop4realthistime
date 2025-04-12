@@ -68,3 +68,8 @@ func destroy(score):
 		$Node2D/Label.modulate = Color("FF0000")
 
 #projectile stuff ends here
+
+
+
+func _on_timer_timeout():
+	queue_free()

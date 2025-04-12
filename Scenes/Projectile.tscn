@@ -17,9 +17,12 @@ shape = SubResource("RectangleShape2D_lt3wh")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
+one_shot = true
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Label" type="Label" parent="Node2D"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

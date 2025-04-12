@@ -1,10 +1,10 @@
-extends Node2D
+extends Sprite2D
 
 var perfect = false
 var great = false
 var ok = false
 var current_projectile = null
-var frame
+#var frame = null
 
 
 @export var input = ""

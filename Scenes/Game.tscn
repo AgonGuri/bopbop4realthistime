@@ -1,37 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4icgmo4tjv4f"]
+[gd_scene load_steps=6 format=3 uid="uid://c4icgmo4tjv4f"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_v8xjo"]
-[ext_resource type="PackedScene" uid="uid://5a7tpdxy0wou" path="res://Scenes/Butt.tscn" id="2_akbmm"]
+[ext_resource type="PackedScene" uid="uid://d1qjhrxohaaf3" path="res://Scenes/ArrowOverlay.tscn" id="2_h6igi"]
 [ext_resource type="PackedScene" uid="uid://cse5xue0etpn7" path="res://Scenes/Conductor.tscn" id="3_0ohds"]
-[ext_resource type="Script" path="res://Scripts/ArrowOverlay.gd" id="3_5fl0q"]
+[ext_resource type="Script" path="res://Scenes/area_2d.gd" id="5_iol7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qiesq"]
+size = Vector2(1011, 717)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_v8xjo")
 
 [node name="ArrowOverlays" type="Node" parent="."]
 
-[node name="Butt" parent="ArrowOverlays" instance=ExtResource("2_akbmm")]
-position = Vector2(173, 95)
-rotation = -1.5708
-script = ExtResource("3_5fl0q")
-input = "up"
+[node name="ArrowOverlay" parent="ArrowOverlays" instance=ExtResource("2_h6igi")]
 
-[node name="Butt2" parent="ArrowOverlays" instance=ExtResource("2_akbmm")]
-position = Vector2(174, 258)
-script = ExtResource("3_5fl0q")
-input = "right"
+[node name="ArrowOverlay2" parent="ArrowOverlays" instance=ExtResource("2_h6igi")]
 
-[node name="Butt3" parent="ArrowOverlays" instance=ExtResource("2_akbmm")]
-position = Vector2(175, 408)
-rotation = 3.14159
-script = ExtResource("3_5fl0q")
-input = "left"
+[node name="ArrowOverlay3" parent="ArrowOverlays" instance=ExtResource("2_h6igi")]
 
-[node name="Butt4" parent="ArrowOverlays" instance=ExtResource("2_akbmm")]
-position = Vector2(173, 557)
-rotation = 1.5708
-script = ExtResource("3_5fl0q")
-input = "down"
+[node name="ArrowOverlay4" parent="ArrowOverlays" instance=ExtResource("2_h6igi")]
 
 [node name="Conductor" parent="." instance=ExtResource("3_0ohds")]
 
@@ -45,5 +33,14 @@ offset_top = 1035.0
 offset_right = 60.0
 offset_bottom = 1058.0
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-14, -22)
+script = ExtResource("5_iol7e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(924, 419.5)
+shape = SubResource("RectangleShape2D_qiesq")
+
 [connection signal="beatSignal" from="Conductor" to="." method="_on_conductor_beat_signal"]
 [connection signal="measureSignal" from="Conductor" to="." method="_on_conductor_measure_signal"]
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

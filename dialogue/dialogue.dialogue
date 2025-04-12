@@ -3,6 +3,12 @@
 (We lived together. We laughed together. We loved together.)
 (Our little town worked together in perfect harmony.)
 (But everything changed when the fire nation attacked)
+do StartGame()
+=> END
+
+~ beforeGameStart
+Wizard: You will never defeat me bwa ha ha
+Bopbop: !!
 => END
 
 

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://gw60k1s7aoue"]
+
+[ext_resource type="Texture2D" uid="uid://btn4mo2mdcfji" path="res://Assets/lindwormstatue.jpg" id="2_snuub"]
+
+[node name="IntroCutscene" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_snuub")

@@ -40,9 +40,7 @@ func _ready():
 	$ArrowOverlays/Butt2.position = SECOND_LANE_SPAWN
 	$ArrowOverlays/Butt3.position = THIRD_LANE_SPAWN
 	$ArrowOverlays/Butt4.position = FOURTH_LANE_SPAWN
-
-
-
+	
 
 func _input(event):
 	if event.is_action("escape"):

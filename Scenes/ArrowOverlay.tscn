@@ -1,7 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1qjhrxohaaf3"]
+[gd_scene load_steps=10 format=3 uid="uid://d1qjhrxohaaf3"]
 
+[ext_resource type="Texture2D" uid="uid://ciq04m3suhxv0" path="res://Assets/UI/arrow_up.png" id="1_d6s06"]
 [ext_resource type="Script" path="res://Scripts/ArrowOverlay.gd" id="1_y41j2"]
-[ext_resource type="Texture2D" uid="uid://d0c17chxhmsbo" path="res://Assets/treasureOfAPirate.png" id="2_dryew"]
+[ext_resource type="Texture2D" uid="uid://fh1lcwb4xs6g" path="res://Assets/UI/arrow_right.png" id="2_h0d7v"]
+[ext_resource type="Texture2D" uid="uid://bv86em4effqki" path="res://Assets/UI/arrow_left.png" id="3_5qq0r"]
+[ext_resource type="Texture2D" uid="uid://bdbvqpok57sdw" path="res://Assets/UI/arrow_down.png" id="4_l2nkj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7mch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d6s06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h0d7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5qq0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l2nkj")
+}],
+"loop": true,
+"name": &"Arrows",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h81vs"]
 size = Vector2(110, 110)
@@ -11,9 +34,10 @@ size = Vector2(72, 78)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yx6vh"]
 
-[node name="ArrowOverlay" type="Sprite2D"]
+[node name="ArrowOverlay" type="AnimatedSprite2D"]
 scale = Vector2(1, 0.805195)
-texture = ExtResource("2_dryew")
+sprite_frames = SubResource("SpriteFrames_c7mch")
+animation = &"Arrows"
 script = ExtResource("1_y41j2")
 
 [node name="OkArea" type="Area2D" parent="."]

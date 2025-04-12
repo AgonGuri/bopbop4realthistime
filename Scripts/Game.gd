@@ -36,10 +36,10 @@ var FOURTH_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 4)
 func _ready():
 	randomize()
 	$Conductor.play_with_beat_offset(8)
-	$ArrowOverlays/ArrowOverlay.position = FIRST_LANE_SPAWN
-	$ArrowOverlays/ArrowOverlay2.position = SECOND_LANE_SPAWN
-	$ArrowOverlays/ArrowOverlay3.position = THIRD_LANE_SPAWN
-	$ArrowOverlays/ArrowOverlay4.position = FOURTH_LANE_SPAWN
+	$ArrowOverlays/ArrowUP.position = FIRST_LANE_SPAWN
+	$ArrowOverlays/ArrowRIGHT.position = SECOND_LANE_SPAWN
+	$ArrowOverlays/ArrowLEFT.position = THIRD_LANE_SPAWN
+	$ArrowOverlays/ArrowDOWN.position = FOURTH_LANE_SPAWN
 	
 	
 	

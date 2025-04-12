@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://md4uew6nwaa6"
-path="res://.godot/imported/wizardBleep.wav-e0d6c1df1863077dca8ebd4769e00df3.sample"
+path="res://.godot/imported/wizardBleep.wav-a53c0f40353b198ad574517dd3d23f6e.sample"
 
 [deps]
 
-source_file="res://Assets/audio/wizardBleep.wav"
-dest_files=["res://.godot/imported/wizardBleep.wav-e0d6c1df1863077dca8ebd4769e00df3.sample"]
+source_file="res://assets/audio/wizardBleep.wav"
+dest_files=["res://.godot/imported/wizardBleep.wav-a53c0f40353b198ad574517dd3d23f6e.sample"]
 
 [params]
 

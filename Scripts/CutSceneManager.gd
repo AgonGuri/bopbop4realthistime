@@ -29,8 +29,13 @@ func _process(delta: float) -> void:
 		#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "youWin")
 
 
+#FOR MANAGING CUTSCENE IMAGES
+#yes there are better ways to do this. no I'm not going to do them
+func ShowSecondImage():
+	var secondImage = get_node("/root/IntroCutscene/secondImage")
+	secondImage.visible = true
+
 func StartGame():
-	print("hello")
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 	#I could even do....
 	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "beforeGameStart")

@@ -1,28 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmcomtii2y3di"]
+[gd_scene load_steps=4 format=3 uid="uid://dmcomtii2y3di"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_uout5"]
+[ext_resource type="Texture2D" uid="uid://d0c17chxhmsbo" path="res://Assets/treasureOfAPirate.png" id="2_54y6q"]
+[ext_resource type="Texture2D" uid="uid://div1h5owvixgw" path="res://icon.svg" id="3_o80sd"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_uout5")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 270.0
-offset_top = 29.0
-offset_right = 838.0
-offset_bottom = 227.0
-text = "our cool game
-i don't know how to make the font bigger"
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="StartButton" type="Button" parent="."]
-offset_left = 314.0
-offset_top = 284.0
-offset_right = 805.0
-offset_bottom = 409.0
-text = "Start Game"
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="QuitButton" type="Button" parent="."]
-offset_left = 316.0
-offset_top = 455.0
-offset_right = 807.0
-offset_bottom = 580.0
-text = "Quit"
+[node name="MainMenuBackground" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 62.0
+offset_top = 92.0
+offset_right = 443.0
+offset_bottom = -92.0
+grow_vertical = 2
+
+[node name="StartButton" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+texture_normal = ExtResource("2_54y6q")
+stretch_mode = 0
+
+[node name="QuitButton" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+texture_normal = ExtResource("3_o80sd")
+stretch_mode = 0
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

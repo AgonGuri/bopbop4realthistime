@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://gw60k1s7aoue"]
+[gd_scene load_steps=3 format=3 uid="uid://gw60k1s7aoue"]
 
-[ext_resource type="Texture2D" uid="uid://btn4mo2mdcfji" path="res://Assets/lindwormstatue.jpg" id="2_snuub"]
+[ext_resource type="Texture2D" uid="uid://0x8ejt6bg5ly" path="res://Assets/cutscenes/cutscene_1.png" id="1_eaouc"]
+[ext_resource type="Texture2D" uid="uid://c4ny7opxby4ab" path="res://Assets/cutscenes/cutscene_2.png" id="2_ol87k"]
 
 [node name="IntroCutscene" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_snuub")
+[node name="firstImage" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_eaouc")
+
+[node name="secondImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("2_ol87k")

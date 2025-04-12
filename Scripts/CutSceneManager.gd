@@ -1,5 +1,7 @@
 extends Node2D
 
+#const Balloon = preload("res://dialogue/balloon.tscn")
+
 var introDialogueCalled
 var startedFromMenu = false
 
@@ -7,6 +9,10 @@ var startedFromMenu = false
 func _ready() -> void:
 	DialogueManager.get_current_scene = func():
 		return get_node(".")
+	
+	#var balloon: Node = Balloon.instantiate()
+	#get_tree().current_scene.add_child(balloon)
+
 	
 	#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "introCutscene")
 	introDialogueCalled = false

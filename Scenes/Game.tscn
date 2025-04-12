@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c4icgmo4tjv4f"]
+[gd_scene load_steps=17 format=3 uid="uid://c4icgmo4tjv4f"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_v8xjo"]
 [ext_resource type="PackedScene" path="res://Scenes/ArrowOverlay.tscn" id="2_h6igi"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://csi7jcnqjh26k" path="res://assets/characters/bopbop_default.png" id="8_rdh1g"]
 [ext_resource type="Texture2D" uid="uid://csnp2acg85skg" path="res://assets/characters/enemy_attack.png" id="9_602d7"]
 [ext_resource type="Texture2D" uid="uid://stuhq155c0qa" path="res://assets/characters/wizard_default.png" id="10_76len"]
+[ext_resource type="Texture2D" uid="uid://d4altaurplxma" path="res://assets/UI/progressbar_lineout.png" id="12_y6mef"]
+[ext_resource type="Texture2D" uid="uid://de4ce4gkhmkek" path="res://assets/UI/progressbar_inside_b.png" id="13_wjrwx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vpjyu"]
 animations = [{
@@ -118,6 +120,17 @@ position = Vector2(959, 1085)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("6_rp4hx")
 offset = Vector2(0.833374, -539.091)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MainUi"]
+offset_left = 736.0
+offset_top = 40.0
+offset_right = 1031.0
+offset_bottom = 82.0
+scale = Vector2(1.64, 1.24)
+value = 70.0
+texture_under = ExtResource("12_y6mef")
+texture_over = ExtResource("12_y6mef")
+texture_progress = ExtResource("13_wjrwx")
 
 [connection signal="beatSignal" from="Conductor" to="." method="_on_conductor_beat_signal"]
 [connection signal="measureSignal" from="Conductor" to="." method="_on_conductor_measure_signal"]

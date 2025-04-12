@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cse5xue0etpn7"]
+[gd_scene load_steps=3 format=3 uid="uid://cse5xue0etpn7"]
 
+[ext_resource type="AudioStream" uid="uid://cqc6i6e1wrgiq" path="res://Assets/Music/BL1NKY - Army of Three (Master).mp3" id="1_c2ijd"]
 [ext_resource type="Script" path="res://Scripts/Conductor.gd" id="1_v4s1s"]
 
-[node name="Conductor" type="Node2D"]
+[node name="Conductor" type="AudioStreamPlayer"]
+stream = ExtResource("1_c2ijd")
+autoplay = true
 script = ExtResource("1_v4s1s")
+bpm = 90
+
+[node name="StartTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_StartTimer_timeout"]

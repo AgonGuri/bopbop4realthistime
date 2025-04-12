@@ -1,19 +1,59 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1qjhrxohaaf3"]
+[gd_scene load_steps=14 format=3 uid="uid://d1qjhrxohaaf3"]
 
+[ext_resource type="Texture2D" uid="uid://ciq04m3suhxv0" path="res://Assets/UI/arrow_up.png" id="1_d6s06"]
 [ext_resource type="Script" path="res://Scripts/ArrowOverlay.gd" id="1_y41j2"]
-[ext_resource type="Texture2D" uid="uid://d0c17chxhmsbo" path="res://Assets/treasureOfAPirate.png" id="2_dryew"]
+[ext_resource type="Texture2D" uid="uid://v1mw8fymdra0" path="res://Assets/UI/arrow_up_pressed.png" id="2_535or"]
+[ext_resource type="Texture2D" uid="uid://fh1lcwb4xs6g" path="res://Assets/UI/arrow_right.png" id="2_h0d7v"]
+[ext_resource type="Texture2D" uid="uid://bv86em4effqki" path="res://Assets/UI/arrow_left.png" id="3_5qq0r"]
+[ext_resource type="Texture2D" uid="uid://bkh7gjdypx1wi" path="res://Assets/UI/arrow_right_pressed.png" id="4_41vbi"]
+[ext_resource type="Texture2D" uid="uid://bdbvqpok57sdw" path="res://Assets/UI/arrow_down.png" id="4_l2nkj"]
+[ext_resource type="Texture2D" uid="uid://bia6qml646num" path="res://Assets/UI/arrow_left_pressed.png" id="6_fsv36"]
+[ext_resource type="Texture2D" uid="uid://bjjsufy8c1cwj" path="res://Assets/UI/arrow_down_pressed.png" id="8_xfjbi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7mch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_d6s06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_535or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_h0d7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_41vbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5qq0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fsv36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l2nkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xfjbi")
+}],
+"loop": true,
+"name": &"Arrows",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h81vs"]
 size = Vector2(110, 110)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx6vh"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rx8q8"]
 size = Vector2(72, 78)
 
-[node name="Butt" type="Sprite2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx6vh"]
+
+[node name="ArrowOverlay" type="AnimatedSprite2D"]
 scale = Vector2(1, 0.805195)
-texture = ExtResource("2_dryew")
+sprite_frames = SubResource("SpriteFrames_c7mch")
+animation = &"Arrows"
 script = ExtResource("1_y41j2")
 
 [node name="OkArea" type="Area2D" parent="."]
@@ -22,14 +62,24 @@ scale = Vector2(1, 1.24194)
 [node name="OkAreaCollider" type="CollisionShape2D" parent="OkArea"]
 shape = SubResource("RectangleShape2D_h81vs")
 
+[node name="GreatArea" type="Area2D" parent="."]
+scale = Vector2(1, 1.24194)
+
+[node name="GreatAreaCollider" type="CollisionShape2D" parent="GreatArea"]
+shape = SubResource("RectangleShape2D_rx8q8")
+
 [node name="PerfectArea" type="Area2D" parent="."]
 scale = Vector2(1, 1.24194)
 
 [node name="PerfectAreaCollider" type="CollisionShape2D" parent="PerfectArea"]
 shape = SubResource("RectangleShape2D_yx6vh")
 
-[node name="GreatArea" type="Area2D" parent="."]
-scale = Vector2(1, 1.24194)
+[node name="PushTimer" type="Timer" parent="."]
+wait_time = 0.05
 
-[node name="GreatAreaCollider" type="CollisionShape2D" parent="GreatArea"]
-shape = SubResource("RectangleShape2D_rx8q8")
+[connection signal="area_entered" from="OkArea" to="." method="_on_ok_area_area_entered"]
+[connection signal="area_exited" from="OkArea" to="." method="_on_ok_area_area_exited"]
+[connection signal="area_entered" from="GreatArea" to="." method="_on_great_area_area_entered"]
+[connection signal="area_exited" from="GreatArea" to="." method="_on_great_area_area_exited"]
+[connection signal="area_entered" from="PerfectArea" to="." method="_on_perfect_area_area_entered"]
+[connection signal="area_exited" from="PerfectArea" to="." method="_on_perfect_area_area_exited"]

@@ -11,16 +11,22 @@ config_version=5
 [application]
 
 config/name="BopBop4RealThisTime"
+run/main_scene="res://Scenes/IntroCutscene.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+CutSceneManager="*res://Scenes/CutSceneManager.tscn"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogue/dialogue.dialogue")
 
 [rendering]
 

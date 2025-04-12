@@ -16,7 +16,6 @@ func _ready() -> void:
 	
 	#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "introCutscene")
 	introDialogueCalled = false
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -71,12 +70,27 @@ func ShowNinthImage():
 func ShowDarkScreen():
 	var darkScreen = get_node("/root/IntroCutscene/darkScreen")
 	darkScreen.visible = true
+	
+func ShowWinFirstImage():
+	get_tree().change_scene_to_file("res://Scenes/WinCutscene.tscn")
+	
+func ShowWinSecondImage():
+	var winSecondImage = get_node("/root/WinCutscene/secondImage")
+	winSecondImage.visible = true
+	var audioPlayer = get_node("/root/WinCutscene/audioPlayer")
+	audioPlayer.play()
+
+
+
 
 func StartGame():
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 	#I could even do....
 	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "beforeGameStart")
-	
+
+func GameOver():
+	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+
 	
 #and then I'll have other functions that are called at the end of youWon, gameOver
 #which will call their respective scenes

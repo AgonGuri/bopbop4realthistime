@@ -18,7 +18,7 @@ var good = 0
 var okay = 0
 var missed = 0
 
-var bpm = 115
+var bpm = 180
 
 var song_position = 0.0
 var song_position_in_beats = 0
@@ -29,6 +29,10 @@ var spawn_1_beat = 0
 var spawn_2_beat = 0
 var spawn_3_beat = 1
 var spawn_4_beat = 0
+var spawn_5_beat = 0
+var spawn_6_beat = 0
+var spawn_7_beat = 1
+var spawn_8_beat = 0
 
 var lane = randi() % 4
 var rand = 0
@@ -66,24 +70,41 @@ func _input(event):
 func _on_conductor_measure_signal(pos):
 	if pos == 1:
 		_spawn_notes(spawn_1_beat)
-		lane = randi() % 4
 	elif pos == 2:
 		_spawn_notes(spawn_2_beat)
-		lane = randi() % 4
 	elif pos == 3:
 		_spawn_notes(spawn_3_beat)
-		lane = randi() % 4
 	elif pos == 4:
 		_spawn_notes(spawn_4_beat)
-		lane = randi() % 4
+	elif pos == 5:
+		_spawn_notes(spawn_5_beat)
+	elif pos == 6:
+		_spawn_notes(spawn_6_beat)
+	elif pos == 7:
+		_spawn_notes(spawn_7_beat)
+	elif pos == 8:
+		_spawn_notes(spawn_8_beat)
 
 func _on_conductor_beat_signal(pos):
 	song_position_in_beats = pos
-	if song_position_in_beats > 36:
+	if song_position_in_beats > 8:
 		spawn_1_beat = 1
-		spawn_2_beat = 1
+		spawn_2_beat = 0
 		spawn_3_beat = 1
-		spawn_4_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 0
+		spawn_8_beat = 0
+	if song_position_in_beats > 16:
+		spawn_1_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 0
+		spawn_8_beat = 0
 	if song_position_in_beats > 98:
 		spawn_1_beat = 2
 		spawn_2_beat = 0

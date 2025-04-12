@@ -1,13 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmcomtii2y3di"]
+[gd_scene load_steps=5 format=3 uid="uid://by3ulndjjr0l4"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_uout5"]
-[ext_resource type="Texture2D" uid="uid://d0c17chxhmsbo" path="res://Assets/treasureOfAPirate.png" id="2_54y6q"]
+[ext_resource type="Texture2D" uid="uid://d0c17chxhmsbo" path="res://assets/treasureOfAPirate.png" id="2_54y6q"]
+[ext_resource type="Texture2D" uid="uid://cd60maidqu5xi" path="res://assets/UI/menu.png" id="2_l46yf"]
 [ext_resource type="Texture2D" uid="uid://div1h5owvixgw" path="res://icon.svg" id="3_o80sd"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_uout5")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_l46yf")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -29,10 +35,10 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = 738.0
-offset_top = 122.0
-offset_right = 1119.0
-offset_bottom = -62.0
+offset_left = 765.0
+offset_top = 644.0
+offset_right = 1146.0
+offset_bottom = -36.0
 grow_vertical = 2
 
 [node name="StartButton" type="TextureButton" parent="CanvasLayer/Control/VBoxContainer"]

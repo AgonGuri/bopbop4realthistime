@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbkyu44ppvg8p"]
+[gd_scene load_steps=2 format=3 uid="uid://cbwrby8ty8sts"]
 
 [ext_resource type="Script" path="res://Scripts/CutSceneManager.gd" id="1_uhjtq"]
 

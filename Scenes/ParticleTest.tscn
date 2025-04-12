@@ -8,8 +8,8 @@ angular_velocity_min = -200.0
 angular_velocity_max = 200.0
 orbit_velocity_min = -0.7
 orbit_velocity_max = 0.7
-radial_velocity_min = 9.99998
-radial_velocity_max = 9.99998
+radial_velocity_min = 40.0
+radial_velocity_max = 60.0
 gravity = Vector3(0, 0, 0)
 linear_accel_min = -2.23517e-06
 linear_accel_max = -2.23517e-06
@@ -17,8 +17,8 @@ radial_accel_min = -100.0
 radial_accel_max = -100.0
 tangential_accel_min = -20.43
 tangential_accel_max = 19.89
-scale_min = 0.01
-scale_max = 0.15
+scale_min = 0.1
+scale_max = 0.5
 scale_over_velocity_max = 104.84
 hue_variation_min = -0.1
 hue_variation_max = 0.1
@@ -26,8 +26,7 @@ hue_variation_max = 0.1
 [node name="ParticleTest" type="Node2D"]
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-amount = 20
-amount_ratio = 0.4
+amount = 16
 process_material = SubResource("ParticleProcessMaterial_v1md1")
 texture = ExtResource("1_7xakx")
 lifetime = 2.0

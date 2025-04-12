@@ -22,6 +22,7 @@ animation = &"ArrowLEFT"
 input = "left"
 
 [node name="ArrowDOWN" parent="ArrowOverlays" instance=ExtResource("2_h6igi")]
+animation = &"ArrowDOWN"
 input = "down"
 
 [node name="Conductor" parent="." instance=ExtResource("3_0ohds")]

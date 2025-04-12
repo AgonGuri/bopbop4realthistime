@@ -26,15 +26,15 @@ func _unhandled_input(event):
 				_reset()
 			else:
 				get_parent().get_parent().increment_score(0)
-		#if event.is_action_pressed(input):
-			#frame = 1           #animating the butts
-		#elif event.is_action_released(input):
-			#$PushTimer.start()
+		if event.is_action_pressed(input):
+				frame = 1       #animating the butts
+		if event.is_action_released(input):
+			$PushTimer.start()
 
 
 
-#func _on_PushTimer_timeout():
-	#frame = 0 #idk what frame is supposed to be
+func _on_PushTimer_timeout():
+	frame = 0       #animating the butts
 
 
 func _reset():

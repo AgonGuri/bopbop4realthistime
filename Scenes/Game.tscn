@@ -1,10 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4icgmo4tjv4f"]
+[gd_scene load_steps=15 format=3 uid="uid://c4icgmo4tjv4f"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_v8xjo"]
 [ext_resource type="PackedScene" path="res://Scenes/ArrowOverlay.tscn" id="2_h6igi"]
 [ext_resource type="PackedScene" path="res://Scenes/Conductor.tscn" id="3_0ohds"]
 [ext_resource type="Texture2D" uid="uid://ciq04m3suhxv0" path="res://assets/UI/arrow_up.png" id="3_voh3h"]
 [ext_resource type="PackedScene" uid="uid://dcjmeip8hvwrw" path="res://Scenes/main_ui.tscn" id="4_yhgk7"]
+[ext_resource type="Texture2D" uid="uid://chcx10qhp1tn3" path="res://assets/backgrounds/villagers background.png" id="6_0iq4p"]
+[ext_resource type="Texture2D" uid="uid://gf2hrt3po362" path="res://assets/backgrounds/villagers foreground.png" id="6_rp4hx"]
+[ext_resource type="Texture2D" uid="uid://b8lnu5jfnlqw4" path="res://assets/characters/bopbop_defend.png" id="7_tw350"]
+[ext_resource type="Texture2D" uid="uid://csi7jcnqjh26k" path="res://assets/characters/bopbop_default.png" id="8_rdh1g"]
+[ext_resource type="Texture2D" uid="uid://csnp2acg85skg" path="res://assets/characters/enemy_attack.png" id="9_602d7"]
+[ext_resource type="Texture2D" uid="uid://stuhq155c0qa" path="res://assets/characters/wizard_default.png" id="10_76len"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vpjyu"]
 animations = [{
@@ -14,6 +20,44 @@ animations = [{
 }],
 "loop": true,
 "name": &"upArrow",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3jf7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tw350")
+}],
+"loop": true,
+"name": &"defend",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_rdh1g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_04dig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_602d7")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_76len")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }]
 
@@ -49,6 +93,31 @@ offset_right = 60.0
 offset_bottom = 1058.0
 
 [node name="MainUi" parent="." instance=ExtResource("4_yhgk7")]
+
+[node name="VillagersBackground" type="Sprite2D" parent="MainUi"]
+position = Vector2(1022, 778)
+texture = ExtResource("6_0iq4p")
+offset = Vector2(3, -198)
+
+[node name="BopBop2" type="AnimatedSprite2D" parent="MainUi"]
+position = Vector2(375, 978)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_g3jf7")
+animation = &"idle"
+offset = Vector2(88.5714, -577.143)
+
+[node name="EvilWizard2" type="AnimatedSprite2D" parent="MainUi"]
+position = Vector2(1606, 1008)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_04dig")
+animation = &"idle"
+offset = Vector2(-51.4287, -580)
+
+[node name="VillagersForeground2" type="Sprite2D" parent="MainUi"]
+position = Vector2(959, 1085)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("6_rp4hx")
+offset = Vector2(0.833374, -539.091)
 
 [connection signal="beatSignal" from="Conductor" to="." method="_on_conductor_beat_signal"]
 [connection signal="measureSignal" from="Conductor" to="." method="_on_conductor_measure_signal"]

@@ -34,7 +34,6 @@ func _process(delta: float) -> void:
 	#if gameWon:
 		#DialogueManager.show_example_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "youWin")
 
-
 #FOR MANAGING CUTSCENE IMAGES
 #yes there are better ways to do this. no I'm not going to do them
 func ShowSecondImage():

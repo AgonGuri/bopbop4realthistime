@@ -45,7 +45,7 @@ func _reset():
 
 
 func _on_ok_area_area_entered(area: Area2D) -> void:
-		print("ok entered")
+	if area.is_in_group("projectile"):
 		ok = true
 		current_projectile = area
 

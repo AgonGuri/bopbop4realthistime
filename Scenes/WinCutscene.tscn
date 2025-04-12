@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfgg5cir32x7r"]
+
+[ext_resource type="Texture2D" uid="uid://cig7l2csj0kva" path="res://Assets/cutscenes/cutscene_win_a.png" id="1_i2kne"]
+[ext_resource type="Texture2D" uid="uid://doe3rwi28gb8f" path="res://Assets/cutscenes/cutscene_win.png" id="2_smh2j"]
+[ext_resource type="AudioStream" uid="uid://jb1fpyvd3lxa" path="res://Assets/audio/victoryCredits.mp3" id="3_7utkq"]
+
+[node name="WinCutscene" type="Node2D"]
+
+[node name="firstImage" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("1_i2kne")
+
+[node name="secondImage" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("2_smh2j")
+
+[node name="audioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7utkq")

@@ -63,13 +63,18 @@ Bopbop: (Giving us enough time...)
 Bopbop: (Enough [color=yellow]delay[/color]...)
 Bopbop: (To stop them for good.)
 Wizard: Ngghrghh...!!
+do ShowWinFirstImage()
 Bopbop: (...)
 Bopbop: (They're frozen.)
-Bopbop: (For now.)
+do ShowWinSecondImage()
+Bopbop: (I won!)
+Bopbop: (Rhythm is back! Melodic Meadow is saved!)
+Bopbop: (For now...)
 => END
 
 ~ youLose
 Wizard: Ha! You fool.
 Wizard: You'll never measure up against me!
 Bopbop: (No...! I can't let this be my coda...)
+do GameOver()
 => END

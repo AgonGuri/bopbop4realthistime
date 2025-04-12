@@ -47,6 +47,7 @@ do StartGame()
 Wizard: You fool! You dare challenge me?
 Bopbop: !!!
 Wizard: Fine... let's see how you like this!
+do StartGameplay()
 => END
 
 

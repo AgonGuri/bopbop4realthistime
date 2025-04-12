@@ -26,16 +26,29 @@ func _unhandled_input(event):
 				_reset()
 			else:
 				get_parent().get_parent().increment_score(0)
-		#if event.is_action_pressed(input):
-			#frame = 1           #animating the butts
-		#elif event.is_action_released(input):
-			#$PushTimer.start()
+		if event.is_action_pressed(input):
+			if input == "up":
+				frame = 1       #animating the butts
+			if input == "right":
+				frame = 3  
+			if input == "left":
+				frame = 5  
+			if input == "down":
+				frame = 7 
+		elif event.is_action_released(input):
+			$PushTimer.start()
 
 
 
-#func _on_PushTimer_timeout():
-	#frame = 0 #idk what frame is supposed to be
-
+func _on_PushTimer_timeout():
+	if input == "up":
+		frame = 0       #animating the butts
+	if input == "right":
+		frame = 2  
+	if input == "left":
+		frame = 4  
+	if input == "down":
+		frame = 6 
 
 func _reset():
 	current_projectile = null

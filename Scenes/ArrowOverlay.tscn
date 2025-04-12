@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1qjhrxohaaf3"]
+[gd_scene load_steps=14 format=3 uid="uid://d1qjhrxohaaf3"]
 
 [ext_resource type="Texture2D" uid="uid://ciq04m3suhxv0" path="res://Assets/UI/arrow_up.png" id="1_d6s06"]
 [ext_resource type="Script" path="res://Scripts/ArrowOverlay.gd" id="1_y41j2"]
+[ext_resource type="Texture2D" uid="uid://v1mw8fymdra0" path="res://Assets/UI/arrow_up_pressed.png" id="2_535or"]
 [ext_resource type="Texture2D" uid="uid://fh1lcwb4xs6g" path="res://Assets/UI/arrow_right.png" id="2_h0d7v"]
 [ext_resource type="Texture2D" uid="uid://bv86em4effqki" path="res://Assets/UI/arrow_left.png" id="3_5qq0r"]
+[ext_resource type="Texture2D" uid="uid://bkh7gjdypx1wi" path="res://Assets/UI/arrow_right_pressed.png" id="4_41vbi"]
 [ext_resource type="Texture2D" uid="uid://bdbvqpok57sdw" path="res://Assets/UI/arrow_down.png" id="4_l2nkj"]
+[ext_resource type="Texture2D" uid="uid://bia6qml646num" path="res://Assets/UI/arrow_left_pressed.png" id="6_fsv36"]
+[ext_resource type="Texture2D" uid="uid://bjjsufy8c1cwj" path="res://Assets/UI/arrow_down_pressed.png" id="8_xfjbi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c7mch"]
 animations = [{
@@ -13,13 +17,25 @@ animations = [{
 "texture": ExtResource("1_d6s06")
 }, {
 "duration": 1.0,
+"texture": ExtResource("2_535or")
+}, {
+"duration": 1.0,
 "texture": ExtResource("2_h0d7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_41vbi")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_5qq0r")
 }, {
 "duration": 1.0,
+"texture": ExtResource("6_fsv36")
+}, {
+"duration": 1.0,
 "texture": ExtResource("4_l2nkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xfjbi")
 }],
 "loop": true,
 "name": &"Arrows",

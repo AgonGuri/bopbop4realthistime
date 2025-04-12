@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://vbok25f53o3u"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0i10x"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
+[node name="ParticleArrow" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+process_material = SubResource("ParticleProcessMaterial_0i10x")

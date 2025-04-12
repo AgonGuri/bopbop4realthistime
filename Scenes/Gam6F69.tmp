@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4icgmo4tjv4f"]
+
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_v8xjo"]
+[ext_resource type="PackedScene" uid="uid://5a7tpdxy0wou" path="res://Scenes/Butt.tscn" id="2_akbmm"]
+[ext_resource type="PackedScene" uid="uid://cse5xue0etpn7" path="res://Scenes/Conductor.tscn" id="3_0ohds"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_v8xjo")
+
+[node name="ArrowOverlays" type="Node" parent="."]
+
+[node name="Butt" parent="ArrowOverlays" instance=ExtResource("2_akbmm")]
+position = Vector2(173, 95)
+rotation = -1.5708
+
+[node name="Butt2" parent="ArrowOverlays" instance=ExtResource("2_akbmm")]
+position = Vector2(174, 258)
+
+[node name="Butt3" parent="ArrowOverlays" instance=ExtResource("2_akbmm")]
+position = Vector2(175, 408)
+rotation = 3.14159
+
+[node name="Butt4" parent="ArrowOverlays" instance=ExtResource("2_akbmm")]
+position = Vector2(173, 557)
+rotation = 1.5708
+
+[node name="Conductor" parent="." instance=ExtResource("3_0ohds")]

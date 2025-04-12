@@ -1,22 +1,54 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4icgmo4tjv4f"]
+[gd_scene load_steps=7 format=3 uid="uid://c4icgmo4tjv4f"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_v8xjo"]
-[ext_resource type="PackedScene" uid="uid://b54fttbwf2otb" path="res://Scenes/Butt.tscn" id="2_akbmm"]
+[ext_resource type="PackedScene" uid="uid://d1qjhrxohaaf3" path="res://Scenes/ArrowOverlay.tscn" id="2_h6igi"]
+[ext_resource type="PackedScene" uid="uid://cse5xue0etpn7" path="res://Scenes/Conductor.tscn" id="3_0ohds"]
+[ext_resource type="Texture2D" uid="uid://ciq04m3suhxv0" path="res://Assets/UI/arrow_up.png" id="3_voh3h"]
+[ext_resource type="PackedScene" uid="uid://dcjmeip8hvwrw" path="res://Scenes/main_ui.tscn" id="4_yhgk7"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vpjyu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_voh3h")
+}],
+"loop": true,
+"name": &"upArrow",
+"speed": 5.0
+}]
+
+[node name="Game" type="Node2D"]
 script = ExtResource("1_v8xjo")
 
-[node name="Butt" parent="." instance=ExtResource("2_akbmm")]
-position = Vector2(173, 95)
-rotation = -1.5708
+[node name="ArrowOverlays" type="Node" parent="."]
 
-[node name="Butt2" parent="." instance=ExtResource("2_akbmm")]
-position = Vector2(174, 258)
+[node name="ArrowUP" parent="ArrowOverlays" instance=ExtResource("2_h6igi")]
+sprite_frames = SubResource("SpriteFrames_vpjyu")
+animation = &"upArrow"
+input = "up"
 
-[node name="Butt3" parent="." instance=ExtResource("2_akbmm")]
-position = Vector2(175, 408)
-rotation = 3.14159
+[node name="ArrowRIGHT" parent="ArrowOverlays" instance=ExtResource("2_h6igi")]
+input = "right"
 
-[node name="Butt4" parent="." instance=ExtResource("2_akbmm")]
-position = Vector2(173, 557)
-rotation = 1.5708
+[node name="ArrowLEFT" parent="ArrowOverlays" instance=ExtResource("2_h6igi")]
+input = "left"
+
+[node name="ArrowDOWN" parent="ArrowOverlays" instance=ExtResource("2_h6igi")]
+input = "down"
+
+[node name="Conductor" parent="." instance=ExtResource("3_0ohds")]
+
+[node name="Score" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Combo" type="Label" parent="."]
+offset_left = 20.0
+offset_top = 1035.0
+offset_right = 60.0
+offset_bottom = 1058.0
+
+[node name="MainUi" parent="." instance=ExtResource("4_yhgk7")]
+
+[connection signal="beatSignal" from="Conductor" to="." method="_on_conductor_beat_signal"]
+[connection signal="measureSignal" from="Conductor" to="." method="_on_conductor_measure_signal"]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://byov2h2v7a7r"
-path="res://.godot/imported/bopbopBleep.wav-97f42e5f3493f5c814a455248caf0a6a.sample"
+path="res://.godot/imported/bopbopBleep.wav-e0d4edb3f7816acac605d3906b9ba81e.sample"
 
 [deps]
 
-source_file="res://assets/audio/bopbopBleep.wav"
-dest_files=["res://.godot/imported/bopbopBleep.wav-97f42e5f3493f5c814a455248caf0a6a.sample"]
+source_file="res://Assets/audio/bopbopBleep.wav"
+dest_files=["res://.godot/imported/bopbopBleep.wav-e0d4edb3f7816acac605d3906b9ba81e.sample"]
 
 [params]
 

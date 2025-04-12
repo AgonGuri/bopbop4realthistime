@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://klbn42k3nifc"]
+
+[ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_7pnli"]
+[ext_resource type="Texture2D" uid="uid://dxg1ndrlpsgnb" path="res://assets/cutscenes/cutscene_gameover.png" id="2_vchq0"]
+[ext_resource type="Texture2D" uid="uid://cbtslxh17k8vc" path="res://assets/UI/gameover_text.png" id="3_2ohtv"]
+[ext_resource type="AudioStream" uid="uid://c35847mf0bw82" path="res://assets/audio/gameOver.mp3" id="3_e1wm8"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_7pnli")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_vchq0")
+
+[node name="Sprite2D" type="Sprite2D" parent="background"]
+position = Vector2(18, -18)
+texture = ExtResource("3_2ohtv")
+
+[node name="StartButton" type="TextureButton" parent="."]
+offset_left = 15.0
+offset_top = 358.0
+offset_right = 382.0
+offset_bottom = 520.0
+size_flags_vertical = 6
+texture_normal = ExtResource("3_lw1hc")
+stretch_mode = 0
+
+[node name="QuitButton" type="TextureButton" parent="."]
+offset_left = 1516.0
+offset_top = 376.0
+offset_right = 1883.0
+offset_bottom = 538.0
+size_flags_vertical = 6
+texture_normal = ExtResource("4_dag40")
+stretch_mode = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_e1wm8")
+autoplay = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

@@ -45,11 +45,15 @@ var FOURTH_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 4)
 
 func _ready():
 	randomize()
-	$Conductor.play_with_beat_offset(8)
+	#$Conductor.play_with_beat_offset(8)
 	$ArrowOverlays/ArrowUP.position = FIRST_LANE_SPAWN
+	$ArrowOverlays/ArrowUP.frame = 0
 	$ArrowOverlays/ArrowRIGHT.position = SECOND_LANE_SPAWN
+	$ArrowOverlays/ArrowUP.frame = 2
 	$ArrowOverlays/ArrowLEFT.position = THIRD_LANE_SPAWN
+	$ArrowOverlays/ArrowUP.frame = 4
 	$ArrowOverlays/ArrowDOWN.position = FOURTH_LANE_SPAWN
+	$ArrowOverlays/ArrowUP.frame = 6
 	
 	#for the animation
 	base_scale = villagers_foreground.scale

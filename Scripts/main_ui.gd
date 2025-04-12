@@ -4,7 +4,7 @@ extends Node2D
 @onready var villager_bg = $TextureRect/VillagersBackground
 @onready var villager_fg = $VillagersForeground
 
-
+#aaa
 var beat_timer = 0.0
 const BPM = 90  # Set your song's BPM
 var beat_interval = 45.0 / BPM

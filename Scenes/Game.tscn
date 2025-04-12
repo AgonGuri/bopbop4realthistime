@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4icgmo4tjv4f"]
+[gd_scene load_steps=5 format=3 uid="uid://c4icgmo4tjv4f"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_v8xjo"]
 [ext_resource type="PackedScene" uid="uid://d1qjhrxohaaf3" path="res://Scenes/ArrowOverlay.tscn" id="2_h6igi"]
 [ext_resource type="PackedScene" uid="uid://cse5xue0etpn7" path="res://Scenes/Conductor.tscn" id="3_0ohds"]
+[ext_resource type="PackedScene" uid="uid://dcjmeip8hvwrw" path="res://Scenes/main_ui.tscn" id="4_yhgk7"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_v8xjo")
@@ -32,6 +33,8 @@ offset_left = 20.0
 offset_top = 1035.0
 offset_right = 60.0
 offset_bottom = 1058.0
+
+[node name="MainUi" parent="." instance=ExtResource("4_yhgk7")]
 
 [connection signal="beatSignal" from="Conductor" to="." method="_on_conductor_beat_signal"]
 [connection signal="measureSignal" from="Conductor" to="." method="_on_conductor_measure_signal"]

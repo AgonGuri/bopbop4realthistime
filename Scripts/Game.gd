@@ -39,6 +39,8 @@ var rand = 0
 var projectile = load("res://Scenes/Projectile.tscn")
 var instance
 
+var progress = 0
+
 const POS_X = 400
 var LANE_WIDTH = 1080 / 6 # split the screen in 6 lanes and use the middle 4 for the projectiles
 var FIRST_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 1)
@@ -104,18 +106,18 @@ func _on_conductor_beat_signal(pos):
 		spawn_7_beat = 0
 		spawn_8_beat = 0
 	if song_position_in_beats > 98:
-		spawn_1_beat = 2
+		spawn_1_beat = 1
 		spawn_2_beat = 0
 		spawn_3_beat = 1
 		spawn_4_beat = 0
 	if song_position_in_beats > 132:
 		spawn_1_beat = 0
-		spawn_2_beat = 2
+		spawn_2_beat = 1
 		spawn_3_beat = 0
-		spawn_4_beat = 2
+		spawn_4_beat = 1
 	if song_position_in_beats > 162:
-		spawn_1_beat = 2
-		spawn_2_beat = 2
+		spawn_1_beat = 1
+		spawn_2_beat = 1
 		spawn_3_beat = 1
 		spawn_4_beat = 1
 	if song_position_in_beats > 194:
@@ -206,30 +208,43 @@ func _spawn_notes(to_spawn):
 		
 
 
-func increment_score(by):
-	if by > 0:
-		combo += 1
-	else:
-		combo = 0
-	
-	if by == 3:
-		great += 1
-	elif by == 2:
-		good += 1
+func increment_score(by): #Update Progress Bar
+	if by == 0:
+		progress = progress+5
 	elif by == 1:
-		okay += 1
-	else:
-		missed += 1
+		progress = progress
+	elif by == 2:
+		progress = progress-2
+	elif by == 3:
+		progress = progress-4
+	elif by == 4:
+		progress = progress+10
+	progress = clamp(progress, 0, 100)
+	get_node("ProgressBar").value = progress
+	
+
+
+#else: #Old Combo Stuff from Tutorial
+		#combo = 0
+	#
+	#if by == 3:
+		#great += 1
+	#elif by == 2:
+		#good += 1
+	#elif by == 1:
+		#okay += 1
+	#else:
+		#missed += 1
 	
 	
-	score += by * combo
-	$Score.text = str(score)
-	if combo > 0:
-		$Combo.text = str(combo) + " combo!"
-		if combo > max_combo:
-			max_combo = combo
-	else:
-		$Combo.text = ""
+	#score += by * combo
+	#$Score.text = str(score)
+	#if combo > 0:
+		#$Combo.text = str(combo) + " combo!"
+		#if combo > max_combo:
+			#max_combo = combo
+	#else:
+		#$Combo.text = ""
 
 
 func reset_combo():

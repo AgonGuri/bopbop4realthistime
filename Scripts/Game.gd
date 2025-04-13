@@ -48,7 +48,6 @@ var FOURTH_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 4)
 
 func _ready():
 	randomize()
-	$Conductor.play_with_beat_offset(8)
 	$ArrowOverlays/ArrowUP.position = FIRST_LANE_SPAWN
 	$ArrowOverlays/ArrowRIGHT.position = SECOND_LANE_SPAWN
 	$ArrowOverlays/ArrowLEFT.position = THIRD_LANE_SPAWN
@@ -169,24 +168,25 @@ func _on_conductor_beat_signal(pos):
 		#if get_tree().change_scene_to_file("res://Scenes/End.tscn") != OK:
 			#print ("Error changing scene to End")
 			
-	#Animation of the sprites
-	villagers_foreground.scale.x = pulse_scale_x
-	villagers_foreground.scale.y = pulse_scale_y
-	
-	var pulse_scale = Vector2(pulse_scale_x, pulse_scale_y)
+	if song_position_in_beats % 2 == 0: #villagers should bound on quarters not eighths
+		#Animation of the sprites
+		villagers_foreground.scale.x = pulse_scale_x
+		villagers_foreground.scale.y = pulse_scale_y
+		
+		var pulse_scale = Vector2(pulse_scale_x, pulse_scale_y)
 
-	# Tween: squash and stretch, then go back
-	var tween1 = get_tree().create_tween()
-	tween1.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		# Tween: squash and stretch, then go back
+		var tween1 = get_tree().create_tween()
+		tween1.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
-	tween1.tween_property(villagers_foreground, "scale", pulse_scale, 0.02)
-	tween1.tween_property(villagers_foreground, "scale", base_scale, 0.1).set_delay(0.05)
-	
-	var tween2 = get_tree().create_tween()
-	tween2.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		tween1.tween_property(villagers_foreground, "scale", pulse_scale, 0.02)
+		tween1.tween_property(villagers_foreground, "scale", base_scale, 0.1).set_delay(0.05)
+		
+		var tween2 = get_tree().create_tween()
+		tween2.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
-	tween2.tween_property(villagers_background, "scale", pulse_scale, 0.02)
-	tween2.tween_property(villagers_background, "scale", base_scale, 0.1).set_delay(0.05)
+		tween2.tween_property(villagers_background, "scale", pulse_scale, 0.02)
+		tween2.tween_property(villagers_background, "scale", base_scale, 0.1).set_delay(0.05)
 
 
 

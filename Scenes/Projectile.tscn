@@ -34,6 +34,7 @@ hue_variation_max = 0.2
 script = ExtResource("1_syhq2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
 texture = ExtResource("1_aai4y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

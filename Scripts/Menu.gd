@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 
 func _on_start_button_pressed() -> void:
 	CutSceneManager.startedFromMenu = true
+	CutSceneManager.introDialogueCalled = false
 	get_tree().change_scene_to_file("res://Scenes/IntroCutscene.tscn")
 
 

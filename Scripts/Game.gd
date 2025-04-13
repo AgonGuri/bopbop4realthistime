@@ -18,7 +18,7 @@ var good = 0
 var okay = 0
 var missed = 0
 
-var bpm = 115
+var bpm = 180
 
 var song_position = 0.0
 var song_position_in_beats = 0
@@ -29,6 +29,10 @@ var spawn_1_beat = 0
 var spawn_2_beat = 0
 var spawn_3_beat = 1
 var spawn_4_beat = 0
+var spawn_5_beat = 0
+var spawn_6_beat = 0
+var spawn_7_beat = 1
+var spawn_8_beat = 0
 
 var lane = randi() % 4
 var rand = 0
@@ -42,10 +46,8 @@ var SECOND_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 2)
 var THIRD_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 3)
 var FOURTH_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 4)
 
-
 func _ready():
 	randomize()
-	$Conductor.play_with_beat_offset(8)
 	$ArrowOverlays/ArrowUP.position = FIRST_LANE_SPAWN
 	$ArrowOverlays/ArrowRIGHT.position = SECOND_LANE_SPAWN
 	$ArrowOverlays/ArrowLEFT.position = THIRD_LANE_SPAWN
@@ -66,24 +68,41 @@ func _input(event):
 func _on_conductor_measure_signal(pos):
 	if pos == 1:
 		_spawn_notes(spawn_1_beat)
-		lane = randi() % 4
 	elif pos == 2:
 		_spawn_notes(spawn_2_beat)
-		lane = randi() % 4
 	elif pos == 3:
 		_spawn_notes(spawn_3_beat)
-		lane = randi() % 4
 	elif pos == 4:
 		_spawn_notes(spawn_4_beat)
-		lane = randi() % 4
+	elif pos == 5:
+		_spawn_notes(spawn_5_beat)
+	elif pos == 6:
+		_spawn_notes(spawn_6_beat)
+	elif pos == 7:
+		_spawn_notes(spawn_7_beat)
+	elif pos == 8:
+		_spawn_notes(spawn_8_beat)
 
 func _on_conductor_beat_signal(pos):
 	song_position_in_beats = pos
-	if song_position_in_beats > 36:
+	if song_position_in_beats > 8:
 		spawn_1_beat = 1
-		spawn_2_beat = 1
+		spawn_2_beat = 0
 		spawn_3_beat = 1
-		spawn_4_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 0
+		spawn_8_beat = 0
+	if song_position_in_beats > 16:
+		spawn_1_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 0
+		spawn_8_beat = 0
 	if song_position_in_beats > 98:
 		spawn_1_beat = 2
 		spawn_2_beat = 0
@@ -134,6 +153,11 @@ func _on_conductor_beat_signal(pos):
 		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
+		
+		#we've reached the end of the song, so if we're still alive, trigger success
+		CutSceneManager.GameWon()
+		$Conductor.stop()
+		
 	#if song_position_in_beats > 404:
 		#Global.set_score(score)
 		#Global.combo = max_combo
@@ -141,27 +165,28 @@ func _on_conductor_beat_signal(pos):
 		#Global.good = good
 		#Global.okay = okay
 		#Global.missed = missed
-		if get_tree().change_scene_to_file("res://Scenes/End.tscn") != OK:
-			print ("Error changing scene to End")
+		#if get_tree().change_scene_to_file("res://Scenes/End.tscn") != OK:
+			#print ("Error changing scene to End")
 			
-	#Animation of the sprites
-	villagers_foreground.scale.x = pulse_scale_x
-	villagers_foreground.scale.y = pulse_scale_y
-	
-	var pulse_scale = Vector2(pulse_scale_x, pulse_scale_y)
+	if song_position_in_beats % 2 == 0: #villagers should bound on quarters not eighths
+		#Animation of the sprites
+		villagers_foreground.scale.x = pulse_scale_x
+		villagers_foreground.scale.y = pulse_scale_y
+		
+		var pulse_scale = Vector2(pulse_scale_x, pulse_scale_y)
 
-	# Tween: squash and stretch, then go back
-	var tween1 = get_tree().create_tween()
-	tween1.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		# Tween: squash and stretch, then go back
+		var tween1 = get_tree().create_tween()
+		tween1.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
-	tween1.tween_property(villagers_foreground, "scale", pulse_scale, 0.02)
-	tween1.tween_property(villagers_foreground, "scale", base_scale, 0.1).set_delay(0.05)
-	
-	var tween2 = get_tree().create_tween()
-	tween2.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		tween1.tween_property(villagers_foreground, "scale", pulse_scale, 0.02)
+		tween1.tween_property(villagers_foreground, "scale", base_scale, 0.1).set_delay(0.05)
+		
+		var tween2 = get_tree().create_tween()
+		tween2.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
-	tween2.tween_property(villagers_background, "scale", pulse_scale, 0.02)
-	tween2.tween_property(villagers_background, "scale", base_scale, 0.1).set_delay(0.05)
+		tween2.tween_property(villagers_background, "scale", pulse_scale, 0.02)
+		tween2.tween_property(villagers_background, "scale", base_scale, 0.1).set_delay(0.05)
 
 
 

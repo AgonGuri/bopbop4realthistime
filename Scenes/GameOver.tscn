@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://klbn42k3nifc"]
+[gd_scene load_steps=5 format=3 uid="uid://biaethuog3gva"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_7pnli"]
 [ext_resource type="Texture2D" uid="uid://dxg1ndrlpsgnb" path="res://Assets/cutscenes/cutscene_gameover.png" id="2_vchq0"]

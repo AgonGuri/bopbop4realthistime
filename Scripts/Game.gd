@@ -84,7 +84,7 @@ func _input(event):
 
 #Bopbop jumping when input = true
 func jump_animation():
-	var start_pos = Vector2(375, 978)
+	var start_pos = Vector2(301, 978)
 	var jump_height = -5  # pixels to move up
 	var jump_time = 0.1  # seconds up and down
 	#Tween animation

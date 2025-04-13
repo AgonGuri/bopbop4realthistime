@@ -131,7 +131,7 @@ texture = ExtResource("6_0iq4p")
 offset = Vector2(3, -198)
 
 [node name="BopBop2" type="AnimatedSprite2D" parent="MainUi"]
-position = Vector2(375, 978)
+position = Vector2(301, 978)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_g3jf7")
 animation = &"idle"

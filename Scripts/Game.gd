@@ -402,6 +402,8 @@ func increment_score(by): #Update Progress Bar
 	progress = clamp(progress, 0, 100)
 	get_node("ProgressBar").value = progress
 	
+	$StaffParticles.set_amount_ratio(0.4+0.008*progress)
+	
 	
 	if progress == 100:
 		spawn_1_beat = 0

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://by3ulndjjr0l4"]
+[gd_scene load_steps=6 format=3 uid="uid://dmcomtii2y3di"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_uout5"]
 [ext_resource type="Texture2D" uid="uid://cd60maidqu5xi" path="res://Assets/UI/menu.png" id="2_l46yf"]
 [ext_resource type="Texture2D" uid="uid://wqy8aj150gx3" path="res://Assets/UI/play.png" id="3_vcdyp"]
 [ext_resource type="Texture2D" uid="uid://c3a27bt646bix" path="res://Assets/UI/quit.png" id="4_g6erg"]
+[ext_resource type="AudioStream" uid="uid://5p1d4gmkoq6d" path="res://Assets/audio/titleTheme.mp3" id="5_lu6ue"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_uout5")
@@ -52,6 +53,10 @@ layout_mode = 2
 size_flags_vertical = 6
 texture_normal = ExtResource("4_g6erg")
 stretch_mode = 0
+
+[node name="TitleTheme" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lu6ue")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

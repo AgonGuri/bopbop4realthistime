@@ -1,25 +1,66 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4icgmo4tjv4f"]
+[gd_scene load_steps=18 format=3 uid="uid://c4icgmo4tjv4f"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_v8xjo"]
 [ext_resource type="PackedScene" uid="uid://d1qjhrxohaaf3" path="res://Scenes/ArrowOverlay.tscn" id="2_h6igi"]
 [ext_resource type="PackedScene" uid="uid://cse5xue0etpn7" path="res://Scenes/Conductor.tscn" id="3_0ohds"]
 [ext_resource type="PackedScene" uid="uid://dcjmeip8hvwrw" path="res://Scenes/main_ui.tscn" id="4_yhgk7"]
 [ext_resource type="Texture2D" uid="uid://chcx10qhp1tn3" path="res://Assets/backgrounds/villagers background.png" id="6_0iq4p"]
+[ext_resource type="Texture2D" uid="uid://cbhv6qmtg3e7v" path="res://Assets/characters/bopbop_defend_c.png" id="6_fbq40"]
 [ext_resource type="Texture2D" uid="uid://gf2hrt3po362" path="res://Assets/backgrounds/villagers foreground.png" id="6_rp4hx"]
 [ext_resource type="Texture2D" uid="uid://b8lnu5jfnlqw4" path="res://Assets/characters/bopbop_defend.png" id="7_tw350"]
+[ext_resource type="Texture2D" uid="uid://ryk30cdyrkb7" path="res://Assets/characters/bopbop_defend_a.png" id="8_et1qd"]
 [ext_resource type="Texture2D" uid="uid://csi7jcnqjh26k" path="res://Assets/characters/bopbop_default.png" id="8_rdh1g"]
+[ext_resource type="Texture2D" uid="uid://bgc7drd1ugouk" path="res://Assets/characters/bopbop_defend_b.png" id="9_1vt2f"]
 [ext_resource type="Texture2D" uid="uid://csnp2acg85skg" path="res://Assets/characters/enemy_attack.png" id="9_602d7"]
 [ext_resource type="Texture2D" uid="uid://stuhq155c0qa" path="res://Assets/characters/wizard_default.png" id="10_76len"]
+[ext_resource type="Texture2D" uid="uid://de8p5ngnshae6" path="res://Assets/UI/progressbar_lineout.png" id="14_sr1ql"]
+[ext_resource type="Texture2D" uid="uid://dbpmavh7icxmg" path="res://Assets/UI/progressbar_inside.png" id="15_bdvcr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3jf7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_tw350")
+"texture": ExtResource("6_fbq40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rdh1g")
 }],
-"loop": true,
-"name": &"defend",
-"speed": 5.0
+"loop": false,
+"name": &"defend_down",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_et1qd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rdh1g")
+}],
+"loop": false,
+"name": &"defend_left",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_1vt2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rdh1g")
+}],
+"loop": false,
+"name": &"defend_right",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tw350")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rdh1g")
+}],
+"loop": false,
+"name": &"defend_up",
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -35,18 +76,21 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("9_602d7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_76len")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("10_76len")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="Game" type="Node2D"]
@@ -89,10 +133,10 @@ texture = ExtResource("6_0iq4p")
 offset = Vector2(3, -198)
 
 [node name="BopBop2" type="AnimatedSprite2D" parent="MainUi"]
-position = Vector2(375, 978)
+position = Vector2(301, 978)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_g3jf7")
-animation = &"idle"
+animation = &"defend_down"
 offset = Vector2(88.5714, -577.143)
 
 [node name="EvilWizard2" type="AnimatedSprite2D" parent="MainUi"]
@@ -107,6 +151,15 @@ position = Vector2(959, 1085)
 scale = Vector2(1.1, 1.1)
 texture = ExtResource("6_rp4hx")
 offset = Vector2(0.833374, -539.091)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="."]
+offset_left = 1443.0
+offset_top = 222.0
+offset_right = 1738.0
+offset_bottom = 264.0
+texture_under = ExtResource("14_sr1ql")
+texture_over = ExtResource("14_sr1ql")
+texture_progress = ExtResource("15_bdvcr")
 
 [connection signal="beatSignal" from="Conductor" to="." method="_on_conductor_beat_signal"]
 [connection signal="measureSignal" from="Conductor" to="." method="_on_conductor_measure_signal"]

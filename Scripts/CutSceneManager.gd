@@ -5,11 +5,21 @@ extends Node2D
 var introDialogueCalled
 var startedFromMenu = false
 
+#var happyVillageTheme
+#var villainChord
+#var menacingTheme
+#var victoryTheme
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	DialogueManager.get_current_scene = func():
 		return get_node(".")
-	
+		
+	#happyVillageTheme = get_tree().get_root().get_node("/Scenes/IntroCutscene/HappyVillageTheme")
+	#villainChord = get_node("/root/IntroCutscene/VillainChord")
+	#menacingTheme = get_node("/root/IntroCutscene/MenacingTheme")
+	#victoryTheme = get_node("/root/IntroCutscene/VictoryTheme")
+	#
 	#var balloon: Node = Balloon.instantiate()
 	#get_tree().current_scene.add_child(balloon)
 
@@ -22,7 +32,7 @@ func _process(delta: float) -> void:
 	if (!introDialogueCalled and startedFromMenu):
 		introDialogueCalled = true
 		DialogueManager.show_example_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "introCutscene")
-		
+		$HappyVillageTheme.play()
 		
 	#okay so this will depend on other stuff
 	#like
@@ -42,6 +52,9 @@ func ShowSecondImage():
 func ShowThirdImage():
 	var thirdImage = get_node("/root/IntroCutscene/thirdImage")
 	thirdImage.visible = true
+	$HappyVillageTheme.stop()
+	$VillainChord.play()
+	$MenacingTheme.play()
 	
 func ShowFourthImage():
 	var fourthImage = get_node("/root/IntroCutscene/fourthImage")
@@ -62,6 +75,7 @@ func ShowSeventhImage():
 func ShowEighthImage():
 	var eighthImage = get_node("/root/IntroCutscene/eighthImage")
 	eighthImage.visible = true
+	$VictoryTheme.play()
 	
 func ShowNinthImage():
 	var ninthImage = get_node("/root/IntroCutscene/ninthImage")
@@ -70,6 +84,7 @@ func ShowNinthImage():
 func ShowDarkScreen():
 	var darkScreen = get_node("/root/IntroCutscene/darkScreen")
 	darkScreen.visible = true
+	$MenacingTheme.stop()
 	
 func ShowWinFirstImage():
 	get_tree().change_scene_to_file("res://Scenes/WinCutscene.tscn")
@@ -87,14 +102,19 @@ func StartGame():
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 	#I could even do....
 	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "beforeGameStart")
-
+	
 func StartGameplay():
 	var conductor = get_node("/root/Game/Conductor")
 	conductor.play()
 	conductor.play_with_beat_offset(8)
+	$VictoryTheme.stop()
 
 func GameOver():
 	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+
+
+func GameWon():
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "youWin")
 
 	
 #and then I'll have other functions that are called at the end of youWon, gameOver

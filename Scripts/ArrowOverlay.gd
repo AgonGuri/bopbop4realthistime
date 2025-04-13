@@ -4,6 +4,7 @@ var perfect = false
 var great = false
 var ok = false
 var current_projectile = null
+var blocked = false
 #var frame = null
 
 
@@ -17,12 +18,15 @@ func _unhandled_input(event):
 				if perfect:
 					get_parent().get_parent().increment_score(3)
 					current_projectile.destroy(3)
+					blocked = true
 				elif great:
 					get_parent().get_parent().increment_score(2)
 					current_projectile.destroy(2)
+					blocked = true
 				elif ok:
 					get_parent().get_parent().increment_score(1)
 					current_projectile.destroy(1)
+					blocked = true
 				_reset()
 			else:
 				get_parent().get_parent().increment_score(0)
@@ -53,6 +57,9 @@ func _on_ok_area_area_exited(area: Area2D) -> void:
 	if area.is_in_group("projectile"):
 		ok = false
 		current_projectile = null
+		if blocked == false:
+			get_parent().get_parent().increment_score(4)
+		blocked = false
 
 func _on_perfect_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("projectile"):

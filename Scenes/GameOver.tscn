@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://klbn42k3nifc"]
+[gd_scene load_steps=5 format=3 uid="uid://biaethuog3gva"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_7pnli"]
-[ext_resource type="Texture2D" uid="uid://dxg1ndrlpsgnb" path="res://assets/cutscenes/cutscene_gameover.png" id="2_vchq0"]
-[ext_resource type="Texture2D" uid="uid://cbtslxh17k8vc" path="res://assets/UI/gameover_text.png" id="3_2ohtv"]
-[ext_resource type="AudioStream" uid="uid://c35847mf0bw82" path="res://assets/audio/gameOver.mp3" id="3_e1wm8"]
+[ext_resource type="Texture2D" uid="uid://dxg1ndrlpsgnb" path="res://Assets/cutscenes/cutscene_gameover.png" id="2_vchq0"]
+[ext_resource type="Texture2D" uid="uid://cbtslxh17k8vc" path="res://Assets/UI/gameover_text.png" id="3_2ohtv"]
+[ext_resource type="AudioStream" uid="uid://c35847mf0bw82" path="res://Assets/audio/gameOver.mp3" id="3_e1wm8"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_7pnli")

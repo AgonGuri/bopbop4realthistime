@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwmxk5fq0afsq"
-path="res://.godot/imported/cutscene_7.png-87b1bb95d50d1ccd6c367717652102f9.ctex"
+uid="uid://bgc7drd1ugouk"
+path="res://.godot/imported/bopbop_defend_b.png-4a08a54993db8220247cad7b4f3a841c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cutscenes/cutscene_7.png"
-dest_files=["res://.godot/imported/cutscene_7.png-87b1bb95d50d1ccd6c367717652102f9.ctex"]
+source_file="res://Assets/characters/bopbop_defend_b.png"
+dest_files=["res://.godot/imported/bopbop_defend_b.png-4a08a54993db8220247cad7b4f3a841c.ctex"]
 
 [params]
 

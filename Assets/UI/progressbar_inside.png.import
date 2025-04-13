@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfexishta0dqa"
-path="res://.godot/imported/cutscene_8.png-e64f3601556752dc8dccff50d8b2c385.ctex"
+uid="uid://dbpmavh7icxmg"
+path="res://.godot/imported/progressbar_inside.png-be5e0079b0af2046b500ec012e0562fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cutscenes/cutscene_8.png"
-dest_files=["res://.godot/imported/cutscene_8.png-e64f3601556752dc8dccff50d8b2c385.ctex"]
+source_file="res://Assets/UI/progressbar_inside.png"
+dest_files=["res://.godot/imported/progressbar_inside.png-be5e0079b0af2046b500ec012e0562fb.ctex"]
 
 [params]
 

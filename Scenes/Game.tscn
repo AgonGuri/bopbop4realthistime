@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://csnp2acg85skg" path="res://Assets/characters/enemy_attack.png" id="9_602d7"]
 [ext_resource type="Texture2D" uid="uid://stuhq155c0qa" path="res://Assets/characters/wizard_default.png" id="10_76len"]
 [ext_resource type="Texture2D" uid="uid://de8p5ngnshae6" path="res://Assets/UI/progressbar_lineout.png" id="14_sr1ql"]
-[ext_resource type="Texture2D" uid="uid://dbpmavh7icxmg" path="res://Assets/UI/progressbar_inside.png" id="15_bdvcr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3jf7"]
 animations = [{
@@ -93,6 +92,9 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5ddkp"]
+load_path = "res://.godot/imported/progressbar_inside.png-be5e0079b0af2046b500ec012e0562fb.ctex"
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_v8xjo")
 
@@ -159,7 +161,7 @@ offset_right = 1738.0
 offset_bottom = 264.0
 texture_under = ExtResource("14_sr1ql")
 texture_over = ExtResource("14_sr1ql")
-texture_progress = ExtResource("15_bdvcr")
+texture_progress = SubResource("CompressedTexture2D_5ddkp")
 
 [connection signal="beatSignal" from="Conductor" to="." method="_on_conductor_beat_signal"]
 [connection signal="measureSignal" from="Conductor" to="." method="_on_conductor_measure_signal"]

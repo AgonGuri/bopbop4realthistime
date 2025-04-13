@@ -31,12 +31,20 @@ var sec_per_beat = 60.0 / bpm
 
 var spawn_1_beat = 0
 var spawn_2_beat = 0
-var spawn_3_beat = 1
+var spawn_3_beat = 0
 var spawn_4_beat = 0
 var spawn_5_beat = 0
 var spawn_6_beat = 0
-var spawn_7_beat = 1
+var spawn_7_beat = 0
 var spawn_8_beat = 0
+var spawn_9_beat = 0
+var spawn_10_beat = 0
+var spawn_11_beat = 0
+var spawn_12_beat = 0
+var spawn_13_beat = 0
+var spawn_14_beat = 0
+var spawn_15_beat = 0
+var spawn_16_beat = 0
 
 var progress = 0
 
@@ -112,10 +120,26 @@ func _on_conductor_measure_signal(pos):
 		_spawn_notes(spawn_7_beat)
 	elif pos == 8:
 		_spawn_notes(spawn_8_beat)
+	elif pos == 9:
+		_spawn_notes(spawn_9_beat)
+	elif pos == 10:
+		_spawn_notes(spawn_10_beat)
+	elif pos == 11:
+		_spawn_notes(spawn_11_beat)
+	elif pos == 12:
+		_spawn_notes(spawn_12_beat)
+	elif pos == 13:
+		_spawn_notes(spawn_13_beat)
+	elif pos == 14:
+		_spawn_notes(spawn_14_beat)
+	elif pos == 15:
+		_spawn_notes(spawn_15_beat)
+	elif pos == 16:
+		_spawn_notes(spawn_16_beat)
 
 func _on_conductor_beat_signal(pos):
 	song_position_in_beats = pos
-	if song_position_in_beats > 8:
+	if song_position_in_beats > 24:
 		spawn_1_beat = 1
 		spawn_2_beat = 0
 		spawn_3_beat = 1
@@ -124,7 +148,173 @@ func _on_conductor_beat_signal(pos):
 		spawn_6_beat = 0
 		spawn_7_beat = 0
 		spawn_8_beat = 0
-	if song_position_in_beats > 16:
+		#these will always be zero for player response
+		spawn_9_beat = 0
+		spawn_10_beat = 0
+		spawn_11_beat = 0
+		spawn_12_beat = 0
+		spawn_13_beat = 0
+		spawn_14_beat = 0
+		spawn_15_beat = 0
+		spawn_16_beat = 0
+	if song_position_in_beats > 56:
+		spawn_1_beat = 0
+		spawn_2_beat = 0
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 0
+		spawn_6_beat = 0
+		spawn_7_beat = 1
+		spawn_8_beat = 0
+	if song_position_in_beats > 88:
+		spawn_1_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 1
+		spawn_4_beat = 1
+		spawn_5_beat = 0
+		spawn_6_beat = 1
+		spawn_7_beat = 0
+		spawn_8_beat = 0
+	if song_position_in_beats > 120:
+		spawn_1_beat = 1
+		spawn_2_beat = 1
+		spawn_3_beat = 0
+		spawn_4_beat = 0
+		spawn_5_beat = 1
+		spawn_6_beat = 1
+		spawn_7_beat = 0
+		spawn_8_beat = 0
+	if song_position_in_beats > 152:
+		spawn_1_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 1
+		spawn_4_beat = 1
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 1
+		spawn_8_beat = 0
+	if song_position_in_beats > 184:
+		#change speed of arrows for 2 beat delay
+		#in theory.
+		#in practice we probably don't have time to set it up right
+		spawn_1_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 1
+		spawn_8_beat = 0
+	if song_position_in_beats > 216:
+		spawn_1_beat = 1
+		spawn_2_beat = 1
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 0
+		spawn_6_beat = 0
+		spawn_7_beat = 1
+		spawn_8_beat = 0
+	if song_position_in_beats > 248:
+		spawn_1_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 0
+		spawn_4_beat = 1
+		spawn_5_beat = 0
+		spawn_6_beat = 1
+		spawn_7_beat = 1
+		spawn_8_beat = 0
+	if song_position_in_beats > 280:
+		spawn_1_beat = 1
+		spawn_2_beat = 1
+		spawn_3_beat = 0
+		spawn_4_beat = 1
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 1
+		spawn_8_beat = 0
+	if song_position_in_beats > 312:
+		spawn_1_beat = 1
+		spawn_2_beat = 1
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 1
+		spawn_6_beat = 1
+		spawn_7_beat = 1
+		spawn_8_beat = 0
+	if song_position_in_beats > 344:
+		spawn_1_beat = 1
+		spawn_2_beat = 1
+		spawn_3_beat = 1
+		spawn_4_beat = 1
+		spawn_5_beat = 0
+		spawn_6_beat = 0
+		spawn_7_beat = 1
+		spawn_8_beat = 0
+	if song_position_in_beats > 376:
+		#hard section begins
+		spawn_1_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 1
+		spawn_8_beat = 0
+	if song_position_in_beats > 408:
+		spawn_1_beat = 1
+		spawn_2_beat = 1
+		spawn_3_beat = 1
+		spawn_4_beat = 1
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 1
+		spawn_8_beat = 0
+	if song_position_in_beats > 440:
+		spawn_1_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 1
+		spawn_8_beat = 1
+	if song_position_in_beats > 472:
+		spawn_1_beat = 0
+		spawn_2_beat = 1
+		spawn_3_beat = 0
+		spawn_4_beat = 1
+		spawn_5_beat = 0
+		spawn_6_beat = 1
+		spawn_7_beat = 0
+		spawn_8_beat = 1
+	if song_position_in_beats > 504:
+		spawn_1_beat = 1
+		spawn_2_beat = 1
+		spawn_3_beat = 1
+		spawn_4_beat = 1
+		spawn_5_beat = 1
+		spawn_6_beat = 1
+		spawn_7_beat = 1
+		spawn_8_beat = 1
+	if song_position_in_beats > 536:
+		spawn_1_beat = 1
+		spawn_2_beat = 1
+		spawn_3_beat = 0
+		spawn_4_beat = 1
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 0
+		spawn_8_beat = 1
+	if song_position_in_beats > 568:
+		spawn_1_beat = 1
+		spawn_2_beat = 1
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 0
+		spawn_6_beat = 1
+		spawn_7_beat = 1
+		spawn_8_beat = 1
+	if song_position_in_beats > 600:
 		spawn_1_beat = 1
 		spawn_2_beat = 0
 		spawn_3_beat = 1
@@ -133,56 +323,15 @@ func _on_conductor_beat_signal(pos):
 		spawn_6_beat = 0
 		spawn_7_beat = 0
 		spawn_8_beat = 0
-	if song_position_in_beats > 98:
-		spawn_1_beat = 2
-		spawn_2_beat = 0
-		spawn_3_beat = 1
-		spawn_4_beat = 0
-	if song_position_in_beats > 132:
-		spawn_1_beat = 0
-		spawn_2_beat = 2
-		spawn_3_beat = 0
-		spawn_4_beat = 2
-	if song_position_in_beats > 162:
-		spawn_1_beat = 2
-		spawn_2_beat = 2
-		spawn_3_beat = 1
-		spawn_4_beat = 1
-	if song_position_in_beats > 194:
-		spawn_1_beat = 2
-		spawn_2_beat = 2
-		spawn_3_beat = 1
-		spawn_4_beat = 2
-	if song_position_in_beats > 228:
-		spawn_1_beat = 0
-		spawn_2_beat = 2
-		spawn_3_beat = 1
-		spawn_4_beat = 2
-	if song_position_in_beats > 258:
-		spawn_1_beat = 1
-		spawn_2_beat = 2
-		spawn_3_beat = 1
-		spawn_4_beat = 2
-	if song_position_in_beats > 288:
-		spawn_1_beat = 0
-		spawn_2_beat = 2
-		spawn_3_beat = 0
-		spawn_4_beat = 2
-	if song_position_in_beats > 322:
-		spawn_1_beat = 3
-		spawn_2_beat = 2
-		spawn_3_beat = 2
-		spawn_4_beat = 1
-	if song_position_in_beats > 388:
-		spawn_1_beat = 1
-		spawn_2_beat = 0
-		spawn_3_beat = 0
-		spawn_4_beat = 0
-	if song_position_in_beats > 396:
+	if song_position_in_beats > 615:
 		spawn_1_beat = 0
 		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
+		spawn_5_beat = 0
+		spawn_6_beat = 0
+		spawn_7_beat = 0
+		spawn_8_beat = 0
 		
 		#we've reached the end of the song, so if we're still alive, trigger success
 		CutSceneManager.GameWon()
@@ -253,6 +402,17 @@ func increment_score(by): #Update Progress Bar
 	progress = clamp(progress, 0, 100)
 	get_node("ProgressBar").value = progress
 	
+	
+	if progress == 100:
+		spawn_1_beat = 0
+		spawn_2_beat = 0
+		spawn_3_beat = 0
+		spawn_4_beat = 0
+		spawn_5_beat = 0
+		spawn_6_beat = 0
+		spawn_7_beat = 0
+		spawn_8_beat = 0
+		CutSceneManager.GameOver()
 	#if by > 0:
 		#combo += 1
 	#else:

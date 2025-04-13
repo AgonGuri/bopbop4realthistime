@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ryk30cdyrkb7"
-path="res://.godot/imported/bopbop_defend_a.png-95987f5ad1ac2d2fbd65eb4ba33721af.ctex"
+uid="uid://de8p5ngnshae6"
+path="res://.godot/imported/progressbar_lineout.png-d138ca79d2479947474749ed750f029c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/characters/bopbop_defend_a.png"
-dest_files=["res://.godot/imported/bopbop_defend_a.png-95987f5ad1ac2d2fbd65eb4ba33721af.ctex"]
+source_file="res://Assets/UI/progressbar_lineout.png"
+dest_files=["res://.godot/imported/progressbar_lineout.png-d138ca79d2479947474749ed750f029c.ctex"]
 
 [params]
 

@@ -46,6 +46,8 @@ var spawn_14_beat = 0
 var spawn_15_beat = 0
 var spawn_16_beat = 0
 
+var progress = 0
+
 var lane = randi() % 4
 var rand = 0
 var projectile = load("res://Scenes/Projectile.tscn")
@@ -386,32 +388,45 @@ func _spawn_notes(to_spawn):
 		
 
 
-func increment_score(by):
-	if by > 0:
-		combo += 1
-	else:
-		combo = 0
-	
-	if by == 3:
-		great += 1
-	elif by == 2:
-		good += 1
+func increment_score(by): #Update Progress Bar
+	if by == 0:
+		progress = progress+5
 	elif by == 1:
-		okay += 1
-	else:
-		missed += 1
+		progress = progress
+	elif by == 2:
+		progress = progress-2
+	elif by == 3:
+		progress = progress-4
+	elif by == 4:
+		progress = progress+10
+	progress = clamp(progress, 0, 100)
+	get_node("ProgressBar").value = progress
 	
-	
-	score += by * combo
-	$Score.text = str(score)
-	if combo > 0:
-		$Combo.text = str(combo) + " combo!"
-		if combo > max_combo:
-			max_combo = combo
-	else:
-		$Combo.text = ""
-
-
+	#if by > 0:
+		#combo += 1
+	#else:
+		#combo = 0
+	#
+	#if by == 3:
+		#great += 1
+	#elif by == 2:
+		#good += 1
+	#elif by == 1:
+		#okay += 1
+	#else:
+		#missed += 1
+	#
+	#
+	#score += by * combo
+	#$Score.text = str(score)
+	#if combo > 0:
+		#$Combo.text = str(combo) + " combo!"
+		#if combo > max_combo:
+			#max_combo = combo
+	#else:
+		#$Combo.text = ""
+#
+#
 func reset_combo():
 	combo = 0
 	$Combo.text = ""

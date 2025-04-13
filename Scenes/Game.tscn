@@ -119,6 +119,7 @@ hue_variation_max = 0.1
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_v8xjo")
+scorePerfect = -3
 
 [node name="ArrowOverlays" type="Node" parent="."]
 
@@ -177,6 +178,7 @@ texture = ExtResource("6_rp4hx")
 offset = Vector2(0.833374, -539.091)
 
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
+z_index = 1
 offset_left = 1443.0
 offset_top = 222.0
 offset_right = 1738.0
@@ -186,8 +188,7 @@ texture_over = ExtResource("14_sr1ql")
 texture_progress = SubResource("CompressedTexture2D_5ddkp")
 
 [node name="StaffParticles" type="GPUParticles2D" parent="."]
-position = Vector2(1358, 492)
-amount = 12
+position = Vector2(1571, 248)
 amount_ratio = 0.4
 process_material = SubResource("ParticleProcessMaterial_boner")
 texture = ExtResource("15_5yo3n")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfgg5cir32x7r"]
+[gd_scene load_steps=10 format=3 uid="uid://cfgg5cir32x7r"]
 
 [ext_resource type="Script" path="res://Scripts/Menu.gd" id="1_6dkxf"]
 [ext_resource type="Texture2D" uid="uid://cig7l2csj0kva" path="res://Assets/cutscenes/cutscene_win_a.png" id="1_i2kne"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://jb1fpyvd3lxa" path="res://Assets/audio/victoryCredits.mp3" id="3_7utkq"]
 [ext_resource type="Texture2D" uid="uid://o6fy5avciakv" path="res://Assets/cutscenes/credits2.png" id="3_ruftu"]
 [ext_resource type="Texture2D" uid="uid://dakercyvirub" path="res://Assets/cutscenes/credits.png" id="4_2wrmc"]
+[ext_resource type="FontFile" uid="uid://bk7apcbieyo2n" path="res://Assets/UI/Font/DynaPuff,Sour_Gummy/Sour_Gummy/static/SourGummy-Medium.ttf" id="5_sn80o"]
 [ext_resource type="Texture2D" uid="uid://wqy8aj150gx3" path="res://Assets/UI/play.png" id="6_dwtrw"]
 [ext_resource type="Texture2D" uid="uid://c3a27bt646bix" path="res://Assets/UI/quit.png" id="7_kklyl"]
 
@@ -17,18 +18,15 @@ position = Vector2(960, 540)
 texture = ExtResource("1_i2kne")
 
 [node name="secondImage" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(961, 540)
 texture = ExtResource("2_smh2j")
 
 [node name="bg2" type="Sprite2D" parent="secondImage"]
-visible = false
 position = Vector2(565, 376)
 scale = Vector2(2.13882, 0.915344)
 texture = ExtResource("3_ruftu")
 
 [node name="Credits2" type="RichTextLabel" parent="secondImage"]
-visible = false
 offset_left = 222.0
 offset_top = 229.0
 offset_right = 915.0
@@ -37,7 +35,8 @@ theme_override_colors/default_color = Color(0.294118, 0.12549, 0.145098, 1)
 theme_override_colors/font_outline_color = Color(0.854634, 0.854634, 0.854634, 1)
 theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 0
-theme_override_font_sizes/normal_font_size = 25
+theme_override_fonts/normal_font = ExtResource("5_sn80o")
+theme_override_font_sizes/normal_font_size = 26
 text = "Music and SFX:
 Cutscene music by us :)
 Army Of Three by BL1NKY
@@ -48,13 +47,11 @@ Cow_Bells_01 by MATRIXXX_ (Freesound) on Pixabay
 Text/Dialogue Bleeps Pack by dmochas-assets on itch.io"
 
 [node name="bg" type="Sprite2D" parent="secondImage"]
-visible = false
 position = Vector2(-606, -291)
 scale = Vector2(1.32937, 1.32937)
 texture = ExtResource("4_2wrmc")
 
 [node name="Credits" type="RichTextLabel" parent="secondImage/bg"]
-visible = false
 offset_left = -163.991
 offset_top = -90.0
 offset_right = 163.009
@@ -64,7 +61,8 @@ theme_override_colors/font_outline_color = Color(0.901961, 0.901961, 0.901961, 1
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 3
-theme_override_font_sizes/normal_font_size = 42
+theme_override_fonts/normal_font = ExtResource("5_sn80o")
+theme_override_font_sizes/normal_font_size = 43
 bbcode_enabled = true
 text = "[center]Droggeldawn
 eyeofthedragon
@@ -72,7 +70,6 @@ Gandari
 wavecipher[/center]"
 
 [node name="StartButton" type="TextureButton" parent="secondImage"]
-visible = false
 offset_left = -956.0
 offset_top = 208.0
 offset_right = -589.0
@@ -82,7 +79,6 @@ texture_normal = ExtResource("6_dwtrw")
 stretch_mode = 0
 
 [node name="QuitButton" type="TextureButton" parent="secondImage"]
-visible = false
 offset_left = -956.0
 offset_top = 370.0
 offset_right = -589.0

@@ -5,7 +5,7 @@
 
 [node name="Conductor" type="AudioStreamPlayer"]
 stream = ExtResource("1_37ucn")
-volume_db = -11.261
+volume_db = -15.0
 script = ExtResource("1_v4s1s")
 
 [node name="StartTimer" type="Timer" parent="."]

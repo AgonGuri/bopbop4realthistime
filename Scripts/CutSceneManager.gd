@@ -96,6 +96,10 @@ func StartGameplay():
 func GameOver():
 	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 
+
+func GameWon():
+	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "youWin")
+
 	
 #and then I'll have other functions that are called at the end of youWon, gameOver
 #which will call their respective scenes

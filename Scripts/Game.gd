@@ -4,6 +4,10 @@ extends Node2D
 @onready var villagers_foreground = $MainUi/VillagersForeground2
 @onready var villagers_background = $MainUi/VillagersBackground
 
+#Animating the characters
+@onready var bopbop = $MainUi/BopBop2
+@onready var evil_wizard = $MainUi/EvilWizard2
+
 #Animation parameters
 var pulse_scale_x = 1
 var pulse_scale_y = 1
@@ -71,6 +75,30 @@ func _input(event):
 	if event.is_action("escape"):
 		if get_tree().change_scene_to_file("res://Scenes/Menu.tscn") != OK:
 			print ("Error changing scene to Menu")
+			
+	#Bopop animation manager
+	if event.is_action("up"):
+		bopbop.play("defend_up")
+		jump_animation()
+	if event.is_action("down"):
+		bopbop.play("defend_down")
+		jump_animation()
+	if event.is_action("left"):
+		bopbop.play("defend_left")
+		jump_animation()
+	if event.is_action("right"):
+		bopbop.play("defend_right")
+		jump_animation()
+
+#Bopbop jumping when input = true
+func jump_animation():
+	var start_pos = Vector2(301, 978)
+	var jump_height = -5  # pixels to move up
+	var jump_time = 0.1  # seconds up and down
+	#Tween animation
+	var tween_jump = get_tree().create_tween()
+	tween_jump.tween_property(bopbop, "position", start_pos + Vector2(0, jump_height), jump_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween_jump.tween_property(bopbop, "position", start_pos, jump_time).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 
 
 func _on_conductor_measure_signal(pos):
@@ -345,6 +373,9 @@ func _spawn_notes(to_spawn):
 		instance = projectile.instantiate()
 		instance.initialize(lane)
 		add_child(instance)
+		#Play animation for the evil wizard
+		evil_wizard.play("attack")
+		
 	if to_spawn > 1:
 		while rand == lane:
 			rand = randi() % 4

@@ -1,12 +1,15 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4icgmo4tjv4f"]
+[gd_scene load_steps=16 format=3 uid="uid://c4icgmo4tjv4f"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_v8xjo"]
 [ext_resource type="PackedScene" uid="uid://d1qjhrxohaaf3" path="res://Scenes/ArrowOverlay.tscn" id="2_h6igi"]
 [ext_resource type="PackedScene" uid="uid://cse5xue0etpn7" path="res://Scenes/Conductor.tscn" id="3_0ohds"]
 [ext_resource type="PackedScene" uid="uid://dcjmeip8hvwrw" path="res://Scenes/main_ui.tscn" id="4_yhgk7"]
 [ext_resource type="Texture2D" uid="uid://chcx10qhp1tn3" path="res://Assets/backgrounds/villagers background.png" id="6_0iq4p"]
+[ext_resource type="Texture2D" uid="uid://b0bmnptccop11" path="res://Assets/characters/bopbop_defend_c.png" id="6_0xnia"]
 [ext_resource type="Texture2D" uid="uid://gf2hrt3po362" path="res://Assets/backgrounds/villagers foreground.png" id="6_rp4hx"]
+[ext_resource type="Texture2D" uid="uid://cyc0kd1xkd2ff" path="res://Assets/characters/bopbop_defend_a.png" id="7_moljx"]
 [ext_resource type="Texture2D" uid="uid://b8lnu5jfnlqw4" path="res://Assets/characters/bopbop_defend.png" id="7_tw350"]
+[ext_resource type="Texture2D" uid="uid://c4pbc50au11dh" path="res://Assets/characters/bopbop_defend_b.png" id="8_o3ey3"]
 [ext_resource type="Texture2D" uid="uid://csi7jcnqjh26k" path="res://Assets/characters/bopbop_default.png" id="8_rdh1g"]
 [ext_resource type="Texture2D" uid="uid://csnp2acg85skg" path="res://Assets/characters/enemy_attack.png" id="9_602d7"]
 [ext_resource type="Texture2D" uid="uid://stuhq155c0qa" path="res://Assets/characters/wizard_default.png" id="10_76len"]
@@ -15,11 +18,47 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_tw350")
+"texture": ExtResource("6_0xnia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rdh1g")
 }],
-"loop": true,
-"name": &"defend",
-"speed": 5.0
+"loop": false,
+"name": &"defend_down",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_moljx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rdh1g")
+}],
+"loop": false,
+"name": &"defend_left",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_o3ey3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rdh1g")
+}],
+"loop": false,
+"name": &"defend_right",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tw350")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rdh1g")
+}],
+"loop": false,
+"name": &"defend_up",
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -35,18 +74,21 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("9_602d7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_76len")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("10_76len")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="Game" type="Node2D"]
@@ -89,7 +131,7 @@ texture = ExtResource("6_0iq4p")
 offset = Vector2(3, -198)
 
 [node name="BopBop2" type="AnimatedSprite2D" parent="MainUi"]
-position = Vector2(375, 978)
+position = Vector2(301, 978)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_g3jf7")
 animation = &"idle"

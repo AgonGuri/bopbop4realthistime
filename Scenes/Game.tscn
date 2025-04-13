@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4icgmo4tjv4f"]
+[gd_scene load_steps=20 format=3 uid="uid://c4icgmo4tjv4f"]
 
 [ext_resource type="Script" path="res://Scripts/Game.gd" id="1_v8xjo"]
 [ext_resource type="PackedScene" uid="uid://d1qjhrxohaaf3" path="res://Scenes/ArrowOverlay.tscn" id="2_h6igi"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://csnp2acg85skg" path="res://Assets/characters/enemy_attack.png" id="9_602d7"]
 [ext_resource type="Texture2D" uid="uid://stuhq155c0qa" path="res://Assets/characters/wizard_default.png" id="10_76len"]
 [ext_resource type="Texture2D" uid="uid://de8p5ngnshae6" path="res://Assets/UI/progressbar_lineout.png" id="14_sr1ql"]
+[ext_resource type="Texture2D" uid="uid://d31cim2db6gk0" path="res://Assets/stargamejam.png" id="15_5yo3n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g3jf7"]
 animations = [{
@@ -95,8 +96,30 @@ animations = [{
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5ddkp"]
 load_path = "res://.godot/imported/progressbar_inside.png-be5e0079b0af2046b500ec012e0562fb.ctex"
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_boner"]
+particle_flag_disable_z = true
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+orbit_velocity_min = -0.7
+orbit_velocity_max = 0.7
+radial_velocity_min = 20.0
+radial_velocity_max = 40.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -2.23517e-06
+linear_accel_max = -2.23517e-06
+radial_accel_min = -100.0
+radial_accel_max = -100.0
+tangential_accel_min = -13.27
+tangential_accel_max = 2.0
+scale_min = 0.1
+scale_max = 0.3
+scale_over_velocity_max = 104.84
+hue_variation_min = -0.1
+hue_variation_max = 0.1
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_v8xjo")
+scorePerfect = -3
 
 [node name="ArrowOverlays" type="Node" parent="."]
 
@@ -155,6 +178,7 @@ texture = ExtResource("6_rp4hx")
 offset = Vector2(0.833374, -539.091)
 
 [node name="ProgressBar" type="TextureProgressBar" parent="."]
+z_index = 1
 offset_left = 1443.0
 offset_top = 222.0
 offset_right = 1738.0
@@ -162,6 +186,16 @@ offset_bottom = 264.0
 texture_under = ExtResource("14_sr1ql")
 texture_over = ExtResource("14_sr1ql")
 texture_progress = SubResource("CompressedTexture2D_5ddkp")
+
+[node name="StaffParticles" type="GPUParticles2D" parent="."]
+position = Vector2(1571, 248)
+amount_ratio = 0.4
+process_material = SubResource("ParticleProcessMaterial_boner")
+texture = ExtResource("15_5yo3n")
+lifetime = 2.0
+explosiveness = 0.5
+randomness = 0.5
+visibility_rect = Rect2(-200, -200, 400, 400)
 
 [connection signal="beatSignal" from="Conductor" to="." method="_on_conductor_beat_signal"]
 [connection signal="measureSignal" from="Conductor" to="." method="_on_conductor_measure_signal"]

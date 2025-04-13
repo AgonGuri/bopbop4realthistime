@@ -18,15 +18,18 @@ position = Vector2(960, 540)
 texture = ExtResource("1_i2kne")
 
 [node name="secondImage" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(961, 540)
 texture = ExtResource("2_smh2j")
 
 [node name="bg2" type="Sprite2D" parent="secondImage"]
+visible = false
 position = Vector2(565, 376)
 scale = Vector2(2.13882, 0.915344)
 texture = ExtResource("3_ruftu")
 
 [node name="Credits2" type="RichTextLabel" parent="secondImage"]
+visible = false
 offset_left = 222.0
 offset_top = 229.0
 offset_right = 915.0
@@ -47,11 +50,13 @@ Cow_Bells_01 by MATRIXXX_ (Freesound) on Pixabay
 Text/Dialogue Bleeps Pack by dmochas-assets on itch.io"
 
 [node name="bg" type="Sprite2D" parent="secondImage"]
+visible = false
 position = Vector2(-606, -291)
 scale = Vector2(1.32937, 1.32937)
 texture = ExtResource("4_2wrmc")
 
 [node name="Credits" type="RichTextLabel" parent="secondImage/bg"]
+visible = false
 offset_left = -163.991
 offset_top = -90.0
 offset_right = 163.009
@@ -70,6 +75,7 @@ Gandari
 wavecipher[/center]"
 
 [node name="StartButton" type="TextureButton" parent="secondImage"]
+visible = false
 offset_left = -956.0
 offset_top = 208.0
 offset_right = -589.0
@@ -79,6 +85,7 @@ texture_normal = ExtResource("6_dwtrw")
 stretch_mode = 0
 
 [node name="QuitButton" type="TextureButton" parent="secondImage"]
+visible = false
 offset_left = -956.0
 offset_top = 370.0
 offset_right = -589.0

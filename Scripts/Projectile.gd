@@ -54,18 +54,22 @@ func destroy(score):
 	hit = true
 	if score == 3:
 		$Node2D/Label.text = "PERFECT"
-		$Node2D/Label.modulate = Color("f6d6bd")
+		#$Node2D/Label.size = 60
+		$Node2D/Label.modulate = Color("77CF00")
 		$HitSFX.play()
 	elif score == 2:
 		$Node2D/Label.text = "GREAT"
-		$Node2D/Label.modulate = Color("c3a38a")
+		#$Node2D/Label.size = 60
+		$Node2D/Label.modulate = Color("779F00")
 		$HitSFX.play()
 	elif score == 1:
 		$Node2D/Label.text = "OK"
-		$Node2D/Label.modulate = Color("997577")
+		#$Node2D/Label.size = 60
+		$Node2D/Label.modulate = Color("f2ad00")
 		$HitSFX.play()
 	elif score == 0:
 		$Node2D/Label.text = "BOOOH"
+		#$Node2D/Label.size = 60
 		$Node2D/Label.modulate = Color("FF0000")
 
 #projectile stuff ends here

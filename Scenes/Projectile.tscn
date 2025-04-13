@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cr2qsue3envxc"]
+[gd_scene load_steps=8 format=3 uid="uid://cr2qsue3envxc"]
 
 [ext_resource type="Texture2D" uid="uid://da818h1pnx6yl" path="res://Assets/fireball.png" id="1_aai4y"]
 [ext_resource type="Script" path="res://Scripts/Projectile.gd" id="1_syhq2"]
+[ext_resource type="FontFile" uid="uid://pp7tn1yodc0r" path="res://Assets/UI/Font/DynaPuff,Sour_Gummy/Sour_Gummy/SourGummy-VariableFont_wdth,wght.ttf" id="3_qicmm"]
 [ext_resource type="AudioStream" uid="uid://hiimc850gtsc" path="res://Assets/audio/dong.mp3" id="3_sqfjn"]
 [ext_resource type="AudioStream" uid="uid://c7u8qgdspkrex" path="res://Assets/audio/ding.mp3" id="4_1dcvv"]
 
@@ -49,6 +50,8 @@ one_shot = true
 [node name="Label" type="Label" parent="Node2D"]
 offset_right = 40.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("3_qicmm")
+theme_override_font_sizes/font_size = 60
 
 [node name="HitSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_sqfjn")

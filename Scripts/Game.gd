@@ -53,12 +53,12 @@ var rand = 0
 var projectile = load("res://Scenes/Projectile.tscn")
 var instance
 
-const POS_X = 400
-var LANE_WIDTH = 1080 / 6 # split the screen in 6 lanes and use the middle 4 for the projectiles
-var FIRST_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 1)
-var SECOND_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 2)
-var THIRD_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 3)
-var FOURTH_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 4)
+const POS_X = 300
+var LANE_WIDTH = 1080 / 16 # split the screen in 6 lanes and use the middle 4 for the projectiles
+var FIRST_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 2)
+var SECOND_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 4)
+var THIRD_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 6)
+var FOURTH_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 8)
 
 func _ready():
 	randomize()

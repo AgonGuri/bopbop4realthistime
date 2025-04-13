@@ -95,7 +95,7 @@ size = Vector2(90, 95.9996)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yx6vh"]
 
 [node name="ArrowOverlay" type="AnimatedSprite2D"]
-scale = Vector2(1, 0.805195)
+scale = Vector2(0.69, 0.69)
 sprite_frames = SubResource("SpriteFrames_c7mch")
 animation = &"ArrowUP"
 script = ExtResource("1_y41j2")
@@ -119,7 +119,7 @@ scale = Vector2(1, 1.24194)
 shape = SubResource("RectangleShape2D_yx6vh")
 
 [node name="PushTimer" type="Timer" parent="."]
-wait_time = 0.01
+wait_time = 0.05
 one_shot = true
 
 [connection signal="area_entered" from="OkArea" to="." method="_on_ok_area_area_entered"]

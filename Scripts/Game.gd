@@ -46,7 +46,6 @@ var SECOND_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 2)
 var THIRD_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 3)
 var FOURTH_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 4)
 
-
 func _ready():
 	randomize()
 	$Conductor.play_with_beat_offset(8)
@@ -155,6 +154,11 @@ func _on_conductor_beat_signal(pos):
 		spawn_2_beat = 0
 		spawn_3_beat = 0
 		spawn_4_beat = 0
+		
+		#we've reached the end of the song, so if we're still alive, trigger success
+		CutSceneManager.GameWon()
+		$Conductor.stop()
+		
 	#if song_position_in_beats > 404:
 		#Global.set_score(score)
 		#Global.combo = max_combo
@@ -162,8 +166,8 @@ func _on_conductor_beat_signal(pos):
 		#Global.good = good
 		#Global.okay = okay
 		#Global.missed = missed
-		if get_tree().change_scene_to_file("res://Scenes/End.tscn") != OK:
-			print ("Error changing scene to End")
+		#if get_tree().change_scene_to_file("res://Scenes/End.tscn") != OK:
+			#print ("Error changing scene to End")
 			
 	#Animation of the sprites
 	villagers_foreground.scale.x = pulse_scale_x

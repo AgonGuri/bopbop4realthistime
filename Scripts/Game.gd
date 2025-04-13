@@ -321,7 +321,7 @@ func _on_conductor_beat_signal(pos):
 		spawn_6_beat = 0
 		spawn_7_beat = 0
 		spawn_8_beat = 0
-	if song_position_in_beats > 616:
+	if song_position_in_beats > 615:
 		spawn_1_beat = 0
 		spawn_2_beat = 0
 		spawn_3_beat = 0

@@ -1,79 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcjmeip8hvwrw"]
+[gd_scene load_steps=3 format=3 uid="uid://dcjmeip8hvwrw"]
 
 [ext_resource type="Texture2D" uid="uid://cqghmmbuju6ve" path="res://Assets/backgrounds/bg.jpg" id="1_kv10l"]
-[ext_resource type="Script" path="res://Scripts/main_ui.gd" id="1_o1p0h"]
-[ext_resource type="Texture2D" uid="uid://csnp2acg85skg" path="res://Assets/characters/enemy_attack.png" id="2_1x370"]
-[ext_resource type="Texture2D" uid="uid://chcx10qhp1tn3" path="res://Assets/backgrounds/villagers background.png" id="2_d2c5m"]
-[ext_resource type="Texture2D" uid="uid://stuhq155c0qa" path="res://Assets/characters/wizard_default.png" id="3_ivwa4"]
-[ext_resource type="Texture2D" uid="uid://b8lnu5jfnlqw4" path="res://Assets/characters/bopbop_defend.png" id="4_tq4ki"]
-[ext_resource type="Texture2D" uid="uid://csi7jcnqjh26k" path="res://Assets/characters/bopbop_default.png" id="5_37g7i"]
 [ext_resource type="Texture2D" uid="uid://gf2hrt3po362" path="res://Assets/backgrounds/villagers foreground.png" id="6_qpo1r"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_auiy4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_1x370")
-}],
-"loop": true,
-"name": &"attack",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_ivwa4")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xfo4d"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_tq4ki")
-}],
-"loop": true,
-"name": &"defend",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_37g7i")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
 [node name="MainUi" type="Node2D"]
-script = ExtResource("1_o1p0h")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1941.0
 offset_bottom = 1145.0
 texture = ExtResource("1_kv10l")
 
-[node name="VillagersBackground" type="Sprite2D" parent="TextureRect"]
-position = Vector2(1025, 580)
-texture = ExtResource("2_d2c5m")
-
-[node name="EvilWizard" type="AnimatedSprite2D" parent="."]
-position = Vector2(1606, 1008)
-scale = Vector2(0.7, 0.7)
-sprite_frames = SubResource("SpriteFrames_auiy4")
-animation = &"idle"
-offset = Vector2(-51.4287, -580)
-
-[node name="BopBop" type="AnimatedSprite2D" parent="."]
-position = Vector2(353, 983)
-scale = Vector2(0.7, 0.7)
-sprite_frames = SubResource("SpriteFrames_xfo4d")
-animation = &"idle"
-offset = Vector2(88.5714, -577.143)
-
 [node name="VillagersForeground" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(960, 580)
 scale = Vector2(1.034, 1.031)
 texture = ExtResource("6_qpo1r")

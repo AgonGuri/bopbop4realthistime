@@ -57,9 +57,11 @@ stream = ExtResource("4_1dcvv")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 z_index = 1
+emitting = false
 amount = 40
 process_material = SubResource("ParticleProcessMaterial_v7jaf")
 lifetime = 0.5
+one_shot = true
 explosiveness = 1.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,5 +1,14 @@
 extends Node2D
 
+#Spites animation on beat
+@onready var villagers_foreground = $MainUi/VillagersForeground2
+@onready var villagers_background = $MainUi/VillagersBackground
+
+#Animation parameters
+var pulse_scale_x = 1
+var pulse_scale_y = 1
+var base_scale: Vector2
+
 var score = 0
 var combo = 0
 
@@ -9,7 +18,7 @@ var good = 0
 var okay = 0
 var missed = 0
 
-var bpm = 115
+var bpm = 180
 
 var song_position = 0.0
 var song_position_in_beats = 0
@@ -20,8 +29,12 @@ var spawn_1_beat = 0
 var spawn_2_beat = 0
 var spawn_3_beat = 1
 var spawn_4_beat = 0
+var spawn_5_beat = 0
+var spawn_6_beat = 0
+var spawn_7_beat = 1
+var spawn_8_beat = 0
 
-var lane = 0
+var lane = randi() % 4
 var rand = 0
 var projectile = load("res://Scenes/Projectile.tscn")
 var instance
@@ -33,17 +46,17 @@ var SECOND_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 2)
 var THIRD_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 3)
 var FOURTH_LANE_SPAWN = Vector2(POS_X, LANE_WIDTH * 4)
 
+
 func _ready():
 	randomize()
-	#$Conductor.play_with_beat_offset(8)
+	$Conductor.play_with_beat_offset(8)
 	$ArrowOverlays/ArrowUP.position = FIRST_LANE_SPAWN
-	$ArrowOverlays/ArrowUP.frame = 0
 	$ArrowOverlays/ArrowRIGHT.position = SECOND_LANE_SPAWN
-	$ArrowOverlays/ArrowUP.frame = 2
 	$ArrowOverlays/ArrowLEFT.position = THIRD_LANE_SPAWN
-	$ArrowOverlays/ArrowUP.frame = 4
 	$ArrowOverlays/ArrowDOWN.position = FOURTH_LANE_SPAWN
-	$ArrowOverlays/ArrowUP.frame = 6
+	
+	#for the animation
+	base_scale = villagers_foreground.scale
 	
 	
 	
@@ -63,14 +76,35 @@ func _on_conductor_measure_signal(pos):
 		_spawn_notes(spawn_3_beat)
 	elif pos == 4:
 		_spawn_notes(spawn_4_beat)
+	elif pos == 5:
+		_spawn_notes(spawn_5_beat)
+	elif pos == 6:
+		_spawn_notes(spawn_6_beat)
+	elif pos == 7:
+		_spawn_notes(spawn_7_beat)
+	elif pos == 8:
+		_spawn_notes(spawn_8_beat)
 
 func _on_conductor_beat_signal(pos):
 	song_position_in_beats = pos
-	if song_position_in_beats > 36:
+	if song_position_in_beats > 8:
 		spawn_1_beat = 1
-		spawn_2_beat = 1
+		spawn_2_beat = 0
 		spawn_3_beat = 1
-		spawn_4_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 0
+		spawn_8_beat = 0
+	if song_position_in_beats > 16:
+		spawn_1_beat = 1
+		spawn_2_beat = 0
+		spawn_3_beat = 1
+		spawn_4_beat = 0
+		spawn_5_beat = 1
+		spawn_6_beat = 0
+		spawn_7_beat = 0
+		spawn_8_beat = 0
 	if song_position_in_beats > 98:
 		spawn_1_beat = 2
 		spawn_2_beat = 0
@@ -130,12 +164,31 @@ func _on_conductor_beat_signal(pos):
 		#Global.missed = missed
 		if get_tree().change_scene_to_file("res://Scenes/End.tscn") != OK:
 			print ("Error changing scene to End")
+			
+	#Animation of the sprites
+	villagers_foreground.scale.x = pulse_scale_x
+	villagers_foreground.scale.y = pulse_scale_y
+	
+	var pulse_scale = Vector2(pulse_scale_x, pulse_scale_y)
+
+	# Tween: squash and stretch, then go back
+	var tween1 = get_tree().create_tween()
+	tween1.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+	tween1.tween_property(villagers_foreground, "scale", pulse_scale, 0.02)
+	tween1.tween_property(villagers_foreground, "scale", base_scale, 0.1).set_delay(0.05)
+	
+	var tween2 = get_tree().create_tween()
+	tween2.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+	tween2.tween_property(villagers_background, "scale", pulse_scale, 0.02)
+	tween2.tween_property(villagers_background, "scale", base_scale, 0.1).set_delay(0.05)
 
 
 
 func _spawn_notes(to_spawn):
 	if to_spawn > 0:
-		lane = randi() % 3
+		lane = randi() % 4
 		instance = projectile.instantiate()
 		instance.initialize(lane)
 		add_child(instance)
@@ -144,7 +197,7 @@ func _spawn_notes(to_spawn):
 			rand = randi() % 4
 		lane = rand
 		instance = projectile.instantiate()
-		projectile.initialize(lane)
+		instance.initialize(lane)
 		add_child(instance)
 		
 

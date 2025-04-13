@@ -2,8 +2,8 @@ extends Area2D
 
 #projectile stuff
 const TARGET_X = 400  # set this number as an x value on arrow overlays
-const BEHIND_TARGET = 0 #this is where a projectile has to be to hit the player
-const SPAWN_X = 1700 # wherever we want to spawn the projectiles
+const BEHIND_TARGET = 100 #this is where a projectile has to be to hit the player
+const SPAWN_X = 1350 # wherever we want to spawn the projectiles
 const DIST_TO_TARGET = TARGET_X - SPAWN_X
 
 var LANE_WIDTH = 1080 / 6 # split the screen in 6 lanes and use the middle 4 for the projectiles

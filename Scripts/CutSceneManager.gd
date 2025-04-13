@@ -102,11 +102,12 @@ func StartGame():
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 	#I could even do....
 	DialogueManager.show_example_dialogue_balloon(load("res://dialogue/dialogue.dialogue"), "beforeGameStart")
-
+	
 func StartGameplay():
 	var conductor = get_node("/root/Game/Conductor")
 	conductor.play()
 	conductor.play_with_beat_offset(8)
+	$VictoryTheme.stop()
 
 func GameOver():
 	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")

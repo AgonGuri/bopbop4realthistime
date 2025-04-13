@@ -119,7 +119,7 @@ scale = Vector2(1, 1.24194)
 shape = SubResource("RectangleShape2D_yx6vh")
 
 [node name="PushTimer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.01
 one_shot = true
 
 [connection signal="area_entered" from="OkArea" to="." method="_on_ok_area_area_entered"]

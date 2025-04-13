@@ -14,7 +14,6 @@ var startedFromMenu = false
 func _ready() -> void:
 	DialogueManager.get_current_scene = func():
 		return get_node(".")
-		
 	#happyVillageTheme = get_tree().get_root().get_node("/Scenes/IntroCutscene/HappyVillageTheme")
 	#villainChord = get_node("/root/IntroCutscene/VillainChord")
 	#menacingTheme = get_node("/root/IntroCutscene/MenacingTheme")
@@ -94,6 +93,63 @@ func ShowWinSecondImage():
 	winSecondImage.visible = true
 	var audioPlayer = get_node("/root/WinCutscene/audioPlayer")
 	audioPlayer.play()
+
+func ShowCredits():
+	var credits = get_node("/root/WinCutscene/secondImage/bg/Credits")
+	var credits2 = get_node("/root/WinCutscene/secondImage/Credits2")
+	
+	var bg = get_node("/root/WinCutscene/secondImage/bg")
+	var bg2 = get_node("/root/WinCutscene/secondImage/bg2")
+	
+	var startButton =  get_node("/root/WinCutscene/secondImage/StartButton")
+	var quitButton =  get_node("/root/WinCutscene/secondImage/QuitButton")
+
+	
+	#would be much nicer to fade these in
+	credits.visible = true
+	credits2.visible = true
+	bg.visible = true
+	bg2.visible = true
+	
+	startButton.visible = true
+	quitButton.visible = true
+	
+	credits.modulate.a = 0
+	credits2.modulate.a = 0
+	bg.modulate.a = 0
+	bg2.modulate.a = 0
+	
+	startButton.modulate.a = 0
+	quitButton.modulate.a = 0
+	
+	var tween1 = get_tree().create_tween()
+	tween1.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween1.tween_property(credits, "modulate:a", 1, 8)
+
+	var tween2 = get_tree().create_tween()
+	tween2.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween2.tween_property(credits2, "modulate:a", 1, 8)
+	
+	
+	var tween3 = get_tree().create_tween()
+	tween3.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween3.tween_property(bg, "modulate:a", 1, 8)
+	
+	var tween4 = get_tree().create_tween()
+	tween4.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween4.tween_property(bg2, "modulate:a", 1, 8)
+	
+	var tween5 = get_tree().create_tween()
+	tween5.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween5.tween_property(startButton, "modulate:a", 0.7, 8)
+	
+	var tween6 = get_tree().create_tween()
+	tween6.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween6.tween_property(quitButton, "modulate:a", 0.7, 8)
+	
+	
+
+
 
 
 

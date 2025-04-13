@@ -71,6 +71,7 @@ do ShowWinSecondImage()
 Bopbop: (I won!)
 Bopbop: (Rhythm is back! Melodic Meadows is saved!)
 Bopbop: (For now...)
+do ShowCredits()
 => END
 
 ~ youLose

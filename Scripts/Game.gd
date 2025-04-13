@@ -402,6 +402,17 @@ func increment_score(by): #Update Progress Bar
 	progress = clamp(progress, 0, 100)
 	get_node("ProgressBar").value = progress
 	
+	
+	if progress == 100:
+		spawn_1_beat = 0
+		spawn_2_beat = 0
+		spawn_3_beat = 0
+		spawn_4_beat = 0
+		spawn_5_beat = 0
+		spawn_6_beat = 0
+		spawn_7_beat = 0
+		spawn_8_beat = 0
+		CutSceneManager.GameOver()
 	#if by > 0:
 		#combo += 1
 	#else:
